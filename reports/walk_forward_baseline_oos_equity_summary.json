@@ -1,0 +1,189 @@
+{
+  "evaluation_type": "walk_forward_baseline_oos_stitched_equity",
+  "benchmark_ticker": "SPY",
+  "universe_tickers": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "TLT",
+    "IEF",
+    "LQD",
+    "HYG",
+    "GLD",
+    "DBC",
+    "XLK",
+    "XLF",
+    "XLE",
+    "XLV"
+  ],
+  "price_column": "adjusted_close",
+  "risk_free_rate": 0.0,
+  "return_alignment": "exact_common_date_intersection_per_split",
+  "evaluated_split_count": 9,
+  "strategy_count": 4,
+  "strategies": [
+    "buy_hold_SPY",
+    "equal_weight",
+    "momentum_top_5_252d_gross",
+    "momentum_top_5_252d_net_10bps"
+  ],
+  "equity_base": 1.0,
+  "momentum_lookback_days": 252,
+  "momentum_top_k": 5,
+  "momentum_rebalance_frequency": "ME",
+  "transaction_cost_bps": 10.0,
+  "cost_model": "net_return = gross_return - turnover * bps / 10000",
+  "turnover_convention": "sum_abs_weight_change",
+  "split_windows": [
+    {
+      "split_id": 0,
+      "test_start": "2017-01-01",
+      "test_end": "2017-12-31",
+      "common_start_date": "2017-01-03",
+      "common_end_date": "2017-12-29",
+      "common_observation_count": 251
+    },
+    {
+      "split_id": 1,
+      "test_start": "2018-01-01",
+      "test_end": "2018-12-31",
+      "common_start_date": "2018-01-02",
+      "common_end_date": "2018-12-31",
+      "common_observation_count": 251
+    },
+    {
+      "split_id": 2,
+      "test_start": "2019-01-01",
+      "test_end": "2019-12-31",
+      "common_start_date": "2019-01-02",
+      "common_end_date": "2019-12-31",
+      "common_observation_count": 252
+    },
+    {
+      "split_id": 3,
+      "test_start": "2020-01-01",
+      "test_end": "2020-12-31",
+      "common_start_date": "2020-01-02",
+      "common_end_date": "2020-12-31",
+      "common_observation_count": 253
+    },
+    {
+      "split_id": 4,
+      "test_start": "2021-01-01",
+      "test_end": "2021-12-31",
+      "common_start_date": "2021-01-04",
+      "common_end_date": "2021-12-31",
+      "common_observation_count": 252
+    },
+    {
+      "split_id": 5,
+      "test_start": "2022-01-01",
+      "test_end": "2022-12-31",
+      "common_start_date": "2022-01-03",
+      "common_end_date": "2022-12-30",
+      "common_observation_count": 251
+    },
+    {
+      "split_id": 6,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "common_start_date": "2023-01-03",
+      "common_end_date": "2023-12-29",
+      "common_observation_count": 250
+    },
+    {
+      "split_id": 7,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "common_start_date": "2024-01-02",
+      "common_end_date": "2024-12-31",
+      "common_observation_count": 252
+    },
+    {
+      "split_id": 8,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "common_start_date": "2025-01-02",
+      "common_end_date": "2025-12-31",
+      "common_observation_count": 250
+    }
+  ],
+  "strategy_summary": {
+    "buy_hold_SPY": {
+      "start_date": "2017-01-03",
+      "end_date": "2025-12-31",
+      "observation_count": 2262,
+      "final_equity": 3.5237966174595066,
+      "metrics": {
+        "cumulative_return": 2.5237966174595066,
+        "cagr": 0.15064193835385087,
+        "annualized_volatility": 0.1848115958280606,
+        "sharpe": 0.8521117575390189,
+        "sortino": 1.0207658836143851,
+        "max_drawdown": -0.3371726321428832,
+        "calmar": 0.44677985101119816,
+        "monthly_win_rate": 0.7129629629629629,
+        "observation_count": 2262
+      }
+    },
+    "equal_weight": {
+      "start_date": "2017-01-03",
+      "end_date": "2025-12-31",
+      "observation_count": 2262,
+      "final_equity": 2.4435898633804727,
+      "metrics": {
+        "cumulative_return": 1.4435898633804727,
+        "cagr": 0.1046599751977646,
+        "annualized_volatility": 0.12547927336338044,
+        "sharpe": 0.8563780157121723,
+        "sortino": 1.0208018612707064,
+        "max_drawdown": -0.25661793934156385,
+        "calmar": 0.4078435648976979,
+        "monthly_win_rate": 0.7129629629629629,
+        "observation_count": 2262
+      }
+    },
+    "momentum_top_5_252d_gross": {
+      "start_date": "2017-01-03",
+      "end_date": "2025-12-31",
+      "observation_count": 2262,
+      "final_equity": 3.0806246539595117,
+      "metrics": {
+        "cumulative_return": 2.0806246539595117,
+        "cagr": 0.1335409457189709,
+        "annualized_volatility": 0.1475524272205083,
+        "sharpe": 0.9236320093907666,
+        "sortino": 1.1693196448585208,
+        "max_drawdown": -0.22538862436953322,
+        "calmar": 0.592491950703002,
+        "monthly_win_rate": 0.7222222222222222,
+        "observation_count": 2262
+      }
+    },
+    "momentum_top_5_252d_net_10bps": {
+      "start_date": "2017-01-03",
+      "end_date": "2025-12-31",
+      "observation_count": 2262,
+      "final_equity": 2.960289049019544,
+      "metrics": {
+        "cumulative_return": 1.960289049019544,
+        "cagr": 0.12852028872131194,
+        "annualized_volatility": 0.14744935331141013,
+        "sharpe": 0.8940555415254641,
+        "sortino": 1.1319141713151293,
+        "max_drawdown": -0.22569494229984377,
+        "calmar": 0.5694424846728207,
+        "monthly_win_rate": 0.7037037037037037,
+        "observation_count": 2262
+      }
+    }
+  },
+  "leaders": {
+    "highest_stitched_cagr": "buy_hold_SPY",
+    "highest_stitched_sharpe": "momentum_top_5_252d_gross",
+    "least_severe_stitched_max_drawdown": "momentum_top_5_252d_gross",
+    "highest_final_equity": "buy_hold_SPY"
+  }
+}

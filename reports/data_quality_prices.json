@@ -1,0 +1,50 @@
+{
+  "rows": 61725,
+  "tickers": [
+    "DBC",
+    "EEM",
+    "EFA",
+    "GLD",
+    "HYG",
+    "IEF",
+    "IWM",
+    "LQD",
+    "QQQ",
+    "SPY",
+    "TLT",
+    "XLE",
+    "XLF",
+    "XLK",
+    "XLV"
+  ],
+  "ticker_count": 15,
+  "min_date": "2010-01-04",
+  "max_date": "2026-05-13",
+  "rows_per_ticker": {
+    "DBC": 4115,
+    "EEM": 4115,
+    "EFA": 4115,
+    "GLD": 4115,
+    "HYG": 4115,
+    "IEF": 4115,
+    "IWM": 4115,
+    "LQD": 4115,
+    "QQQ": 4115,
+    "SPY": 4115,
+    "TLT": 4115,
+    "XLE": 4115,
+    "XLF": 4115,
+    "XLK": 4115,
+    "XLV": 4115
+  },
+  "missing_values_by_column": {
+    "date": 0,
+    "ticker": 0,
+    "open": 0,
+    "high": 0,
+    "low": 0,
+    "close": 0,
+    "adjusted_close": 0,
+    "volume": 0
+  }
+}

@@ -1,0 +1,29 @@
+features:
+  price_column: "adjusted_close"
+
+  return_windows:
+    - 1
+
+  momentum_windows:
+    - 21
+    - 63
+    - 126
+    - 252
+
+  volatility_windows:
+    - 21
+    - 63
+    - 126
+
+  drawdown_windows:
+    - 63
+    - 126
+    - 252
+
+  ranking:
+    enabled: true
+    cross_sectional: true
+
+  leakage_control:
+    shift_features_by_days: 1
+    reason: "Features are shifted by one trading day so today's allocation cannot use today's close."

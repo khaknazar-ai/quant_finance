@@ -1,0 +1,78 @@
+{
+  "input_rows": 61725,
+  "require_complete_features": true,
+  "feature_count": 22,
+  "eligible_date_count": 3862,
+  "eligible_min_date": "2011-01-04",
+  "eligible_max_date": "2026-05-13",
+  "train_years": 6,
+  "test_years": 1,
+  "step_years": 1,
+  "min_train_observations": 1000,
+  "split_count": 9,
+  "splits": [
+    {
+      "split_id": 0,
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "test_start": "2017-01-01",
+      "test_end": "2017-12-31"
+    },
+    {
+      "split_id": 1,
+      "train_start": "2012-01-01",
+      "train_end": "2017-12-31",
+      "test_start": "2018-01-01",
+      "test_end": "2018-12-31"
+    },
+    {
+      "split_id": 2,
+      "train_start": "2013-01-01",
+      "train_end": "2018-12-31",
+      "test_start": "2019-01-01",
+      "test_end": "2019-12-31"
+    },
+    {
+      "split_id": 3,
+      "train_start": "2014-01-01",
+      "train_end": "2019-12-31",
+      "test_start": "2020-01-01",
+      "test_end": "2020-12-31"
+    },
+    {
+      "split_id": 4,
+      "train_start": "2015-01-01",
+      "train_end": "2020-12-31",
+      "test_start": "2021-01-01",
+      "test_end": "2021-12-31"
+    },
+    {
+      "split_id": 5,
+      "train_start": "2016-01-01",
+      "train_end": "2021-12-31",
+      "test_start": "2022-01-01",
+      "test_end": "2022-12-31"
+    },
+    {
+      "split_id": 6,
+      "train_start": "2017-01-01",
+      "train_end": "2022-12-31",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "split_id": 7,
+      "train_start": "2018-01-01",
+      "train_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "split_id": 8,
+      "train_start": "2019-01-01",
+      "train_end": "2024-12-31",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    }
+  ]
+}

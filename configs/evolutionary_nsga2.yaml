@@ -1,0 +1,35 @@
+﻿optimizer:
+  algorithm: "NSGA2"
+  population_size: 64
+  generations: 40
+  random_seed: 42
+
+search_space:
+  top_k_min: 2
+  top_k_max: 6
+
+  momentum_windows:
+    min: 21
+    max: 252
+
+  volatility_windows:
+    min: 21
+    max: 126
+
+  factor_weights:
+    min: 0.0
+    max: 1.0
+
+objectives:
+  maximize:
+    - "sharpe"
+    - "cagr"
+  minimize:
+    - "max_drawdown"
+    - "turnover"
+
+constraints:
+  max_drawdown_limit: 0.35
+  max_annual_turnover: 12.0
+  min_assets: 2
+  long_only: true

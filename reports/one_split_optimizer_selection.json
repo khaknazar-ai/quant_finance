@@ -1,0 +1,465 @@
+{
+  "evaluation_type": "one_split_optimizer_train_test_selection",
+  "protocol": "NSGA-II is fit only on the train window. A single candidate is selected using a fixed train metric before test evaluation. The selected candidate is then evaluated on the OOS test window.",
+  "split_index": 0,
+  "train_start": "2011-01-04",
+  "train_end": "2016-12-31",
+  "test_start": "2017-01-01",
+  "test_end": "2017-12-31",
+  "transaction_cost_bps": 10.0,
+  "risk_free_rate": 0.0,
+  "selection_rule": {
+    "metric": "sharpe",
+    "direction": "maximize",
+    "candidate_pool": "all_valid_train_evaluations",
+    "test_data_used_for_selection": false
+  },
+  "optimizer_summary": {
+    "objective_names": [
+      "negative_sharpe",
+      "negative_cagr",
+      "max_drawdown_abs",
+      "average_turnover"
+    ],
+    "population_size": 12,
+    "generations": 3,
+    "seed": 42,
+    "evaluation_count": 36,
+    "valid_evaluation_count": 36,
+    "invalid_evaluation_count": 0,
+    "pareto_candidate_count": 9
+  },
+  "selected_train_evaluation": {
+    "parameters": {
+      "momentum_window": 126,
+      "volatility_window": 126,
+      "drawdown_window": 252,
+      "momentum_weight": 1.2633287982441297,
+      "volatility_weight": 1.5161754801707477,
+      "drawdown_weight": 0.7468866844613231,
+      "top_k": 6,
+      "max_asset_weight": 0.2801312177264726,
+      "rebalance_frequency": "ME"
+    },
+    "strategy_name": "factor_rotation_m126_v126_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.280131",
+    "train_start": "2011-01-04",
+    "train_end": "2016-12-31",
+    "valid": true,
+    "invalid_reason": null,
+    "metrics": {
+      "cagr": 0.10391134525013301,
+      "sharpe": 1.3260238200410757,
+      "sortino": 1.7884711556131208,
+      "max_drawdown": -0.08853414685979921,
+      "calmar": 1.1736866388364797,
+      "annualized_volatility": 0.07679152973192659,
+      "monthly_win_rate": 0.6610169491525424,
+      "cumulative_return": 0.625259675721956,
+      "final_equity": 1.625259675721956
+    },
+    "objectives": {
+      "negative_sharpe": -1.3260238200410757,
+      "negative_cagr": -0.10391134525013301,
+      "max_drawdown_abs": 0.08853414685979921,
+      "average_turnover": 0.016424340333871836
+    },
+    "turnover_summary": {
+      "average_turnover": 0.016424340333871836,
+      "total_turnover": 20.333333333333332,
+      "max_turnover": 0.9999999999999999,
+      "rebalance_count": 44,
+      "turnover_observation_count": 1238
+    },
+    "return_start": "2012-02-01",
+    "return_end": "2016-12-30",
+    "return_observation_count": 1238,
+    "candidate_id": "evaluation_0022"
+  },
+  "selected_test_evaluation": {
+    "valid": true,
+    "invalid_reason": null,
+    "strategy_name": "factor_rotation_m126_v126_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.280131_selected_oos",
+    "parameters": {
+      "momentum_window": 126,
+      "volatility_window": 126,
+      "drawdown_window": 252,
+      "momentum_weight": 1.2633287982441297,
+      "volatility_weight": 1.5161754801707477,
+      "drawdown_weight": 0.7468866844613231,
+      "top_k": 6,
+      "max_asset_weight": 0.2801312177264726,
+      "rebalance_frequency": "ME"
+    },
+    "metrics": {
+      "cagr": 0.16480916728389672,
+      "sharpe": 2.6028106821013304,
+      "sortino": 3.283846784635451,
+      "max_drawdown": -0.01810256475353933,
+      "calmar": 9.104188800190537,
+      "annualized_volatility": 0.059303346495979875,
+      "monthly_win_rate": 1.0,
+      "cumulative_return": 0.1500945575703585,
+      "final_equity": 1.1500945575703585
+    },
+    "turnover_summary": {
+      "average_turnover": 0.02453102453102453,
+      "total_turnover": 5.666666666666666,
+      "max_turnover": 0.9999999999999999,
+      "rebalance_count": 9,
+      "turnover_observation_count": 231
+    },
+    "return_start": "2017-02-01",
+    "return_end": "2017-12-29",
+    "return_observation_count": 231
+  },
+  "selected_metric_degradation": {
+    "cagr_test_minus_train": 0.060897822033763704,
+    "sharpe_test_minus_train": 1.2767868620602547,
+    "max_drawdown_test_minus_train": 0.07043158210625988,
+    "calmar_test_minus_train": 7.930502161354057
+  },
+  "test_common_window": {
+    "start": "2017-02-01",
+    "end": "2017-12-29",
+    "observation_count": 231
+  },
+  "test_common_metrics": {
+    "optimizer_selected_net": {
+      "cagr": 0.16480916728389672,
+      "sharpe": 2.6028106821013304,
+      "sortino": 3.283846784635451,
+      "max_drawdown": -0.01810256475353933,
+      "calmar": 9.104188800190537,
+      "annualized_volatility": 0.059303346495979875,
+      "monthly_win_rate": 1.0,
+      "cumulative_return": 0.1500945575703585,
+      "final_equity": 1.1500945575703585
+    },
+    "buy_hold_SPY": {
+      "cagr": 0.21524015788685102,
+      "sharpe": 2.915232517324238,
+      "sortino": 3.8095809037360673,
+      "max_drawdown": -0.02610074537757945,
+      "calmar": 8.246513836027933,
+      "annualized_volatility": 0.0676785681113421,
+      "monthly_win_rate": 1.0,
+      "cumulative_return": 0.1956578965049629,
+      "final_equity": 1.195657896504963
+    },
+    "equal_weight": {
+      "cagr": 0.15915153381890246,
+      "sharpe": 3.032175900612172,
+      "sortino": 4.371229348058576,
+      "max_drawdown": -0.019963216040509102,
+      "calmar": 7.972239217165922,
+      "annualized_volatility": 0.0491173293268606,
+      "monthly_win_rate": 1.0,
+      "cumulative_return": 0.14497287033860196,
+      "final_equity": 1.144972870338602
+    }
+  },
+  "test_common_metric_leaders": {
+    "highest_test_cagr": {
+      "strategy_name": "buy_hold_SPY",
+      "metric": "cagr",
+      "value": 0.21524015788685102
+    },
+    "highest_test_sharpe": {
+      "strategy_name": "equal_weight",
+      "metric": "sharpe",
+      "value": 3.032175900612172
+    },
+    "least_severe_test_max_drawdown": {
+      "strategy_name": "optimizer_selected_net",
+      "metric": "max_drawdown",
+      "value": -0.01810256475353933
+    },
+    "highest_test_calmar": {
+      "strategy_name": "optimizer_selected_net",
+      "metric": "calmar",
+      "value": 9.104188800190537
+    }
+  },
+  "pareto_front": [
+    {
+      "pareto_id": "pareto_000",
+      "strategy_name": "factor_rotation_m126_v21_d252_mw1.26333_vw1.51618_dw0.709052_top6_maxw0.467936",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 21,
+        "drawdown_window": 252,
+        "momentum_weight": 1.2633287982441297,
+        "volatility_weight": 1.5161754801707477,
+        "drawdown_weight": 0.7090519362597367,
+        "top_k": 6,
+        "max_asset_weight": 0.4679363363966593,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.1091695740316696,
+        0.12763451220835065,
+        1.6552623439851641,
+        1.2633287982441297,
+        1.5161754801707477,
+        0.7090519362597367,
+        5.882792097579613,
+        0.4679363363966593
+      ],
+      "objectives": {
+        "negative_sharpe": -1.090648451923485,
+        "negative_cagr": -0.0877048624333534,
+        "max_drawdown_abs": 0.0885341468597991,
+        "average_turnover": 0.02288637587506731
+      }
+    },
+    {
+      "pareto_id": "pareto_001",
+      "strategy_name": "factor_rotation_m126_v63_d63_mw0.22906_vw1.33681_dw0.942192_top4_maxw0.4295",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 63,
+        "momentum_weight": 0.22906014707194688,
+        "volatility_weight": 1.3368059235809433,
+        "drawdown_weight": 0.942192412286265,
+        "top_k": 4,
+        "max_asset_weight": 0.42949965722480765,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        0.9178315510766799,
+        1.1374823919057875,
+        0.2795939962553149,
+        0.22906014707194688,
+        1.3368059235809433,
+        0.942192412286265,
+        4.260944425924755,
+        0.42949965722480765
+      ],
+      "objectives": {
+        "negative_sharpe": -0.7729649725633596,
+        "negative_cagr": -0.04766081738627559,
+        "max_drawdown_abs": 0.0794190045185671,
+        "average_turnover": 0.02490842490842491
+      }
+    },
+    {
+      "pareto_id": "pareto_002",
+      "strategy_name": "factor_rotation_m126_v21_d63_mw0.0147245_vw1.57385_dw0.69344_top6_maxw0.434523",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 21,
+        "drawdown_window": 63,
+        "momentum_weight": 0.014724539502011025,
+        "volatility_weight": 1.5738487550042768,
+        "drawdown_weight": 0.693440484220263,
+        "top_k": 6,
+        "max_asset_weight": 0.4345228346556999,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.377966866053637,
+        0.12745182840017671,
+        0.4175789811626809,
+        0.014724539502011025,
+        1.5738487550042768,
+        0.693440484220263,
+        5.8945752736175105,
+        0.4345228346556999
+      ],
+      "objectives": {
+        "negative_sharpe": -1.202691129495426,
+        "negative_cagr": -0.0800044361438712,
+        "max_drawdown_abs": 0.08239924519774677,
+        "average_turnover": 0.021733821733821733
+      }
+    },
+    {
+      "pareto_id": "pareto_003",
+      "strategy_name": "factor_rotation_m126_v63_d126_mw0.333946_vw0.0350276_dw0.22656_top5_maxw0.338563",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 126,
+        "momentum_weight": 0.3339458398154078,
+        "volatility_weight": 0.035027584767846065,
+        "drawdown_weight": 0.22656029981405856,
+        "top_k": 5,
+        "max_asset_weight": 0.3385631690754162,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.328627080654775,
+        0.812773722880141,
+        1.3891192416923228,
+        0.3339458398154078,
+        0.035027584767846065,
+        0.22656029981405856,
+        4.956247607083125,
+        0.3385631690754162
+      ],
+      "objectives": {
+        "negative_sharpe": -1.2344347080172302,
+        "negative_cagr": -0.1279187340277108,
+        "max_drawdown_abs": 0.12997418970469554,
+        "average_turnover": 0.0273992673992674
+      }
+    },
+    {
+      "pareto_id": "pareto_004",
+      "strategy_name": "factor_rotation_m126_v126_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.280131",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 126,
+        "drawdown_window": 252,
+        "momentum_weight": 1.2633287982441297,
+        "volatility_weight": 1.5161754801707477,
+        "drawdown_weight": 0.7468866844613231,
+        "top_k": 6,
+        "max_asset_weight": 0.2801312177264726,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.1091695740316696,
+        1.630997532492454,
+        1.6552623439851641,
+        1.2633287982441297,
+        1.5161754801707477,
+        0.7468866844613231,
+        5.882792097579613,
+        0.2801312177264726
+      ],
+      "objectives": {
+        "negative_sharpe": -1.3260238200410757,
+        "negative_cagr": -0.10391134525013301,
+        "max_drawdown_abs": 0.08853414685979921,
+        "average_turnover": 0.016424340333871836
+      }
+    },
+    {
+      "pareto_id": "pareto_005",
+      "strategy_name": "factor_rotation_m126_v21_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.284517",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 21,
+        "drawdown_window": 252,
+        "momentum_weight": 1.2633287982441297,
+        "volatility_weight": 1.5161754801707477,
+        "drawdown_weight": 0.7468866844613231,
+        "top_k": 6,
+        "max_asset_weight": 0.2845168619483135,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.1091695740316696,
+        0.24123409090735426,
+        1.7305572204302198,
+        1.2633287982441297,
+        1.5161754801707477,
+        0.7468866844613231,
+        5.882792097579613,
+        0.2845168619483135
+      ],
+      "objectives": {
+        "negative_sharpe": -1.090648451923485,
+        "negative_cagr": -0.0877048624333534,
+        "max_drawdown_abs": 0.0885341468597991,
+        "average_turnover": 0.02288637587506731
+      }
+    },
+    {
+      "pareto_id": "pareto_006",
+      "strategy_name": "factor_rotation_m126_v63_d126_mw0.333946_vw0.03744_dw0.22656_top6_maxw0.337545",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 126,
+        "momentum_weight": 0.3339458398154078,
+        "volatility_weight": 0.03743997330817872,
+        "drawdown_weight": 0.22656029981405856,
+        "top_k": 6,
+        "max_asset_weight": 0.33754549849713206,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        1.3790284172666984,
+        0.812773722880141,
+        1.3891192416923228,
+        0.3339458398154078,
+        0.03743997330817872,
+        0.22656029981405856,
+        5.928145431457655,
+        0.33754549849713206
+      ],
+      "objectives": {
+        "negative_sharpe": -1.0776791055069395,
+        "negative_cagr": -0.10621920742517088,
+        "max_drawdown_abs": 0.12820315688470796,
+        "average_turnover": 0.026373626373626374
+      }
+    },
+    {
+      "pareto_id": "pareto_007",
+      "strategy_name": "factor_rotation_m126_v63_d63_mw0.22906_vw1.33681_dw0.713436_top6_maxw0.425202",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 63,
+        "momentum_weight": 0.22906014707194688,
+        "volatility_weight": 1.3368059235809433,
+        "drawdown_weight": 0.7134362257152677,
+        "top_k": 6,
+        "max_asset_weight": 0.4252018331369845,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        0.9217959389932839,
+        1.1374823919057875,
+        0.2837292576596755,
+        0.22906014707194688,
+        1.3368059235809433,
+        0.7134362257152677,
+        5.903965228374169,
+        0.4252018331369845
+      ],
+      "objectives": {
+        "negative_sharpe": -1.0314123761624496,
+        "negative_cagr": -0.06984320732779192,
+        "max_drawdown_abs": 0.09368422257524389,
+        "average_turnover": 0.015140415140415139
+      }
+    },
+    {
+      "pareto_id": "pareto_008",
+      "strategy_name": "factor_rotation_m126_v21_d63_mw0.0147245_vw1.69179_dw0.69344_top6_maxw0.438908",
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 21,
+        "drawdown_window": 63,
+        "momentum_weight": 0.014724539502011025,
+        "volatility_weight": 1.6917862137739337,
+        "drawdown_weight": 0.693440484220263,
+        "top_k": 6,
+        "max_asset_weight": 0.43890837355197765,
+        "rebalance_frequency": "ME"
+      },
+      "optimizer_vector": [
+        0.8546894839231608,
+        0.12745182840017671,
+        0.4175789811626809,
+        0.014724539502011025,
+        1.6917862137739337,
+        0.693440484220263,
+        5.8945752736175105,
+        0.43890837355197765
+      ],
+      "objectives": {
+        "negative_sharpe": -1.1085578312701545,
+        "negative_cagr": -0.07363014305441618,
+        "max_drawdown_abs": 0.08239924519774644,
+        "average_turnover": 0.02222222222222222
+      }
+    }
+  ],
+  "interpretation_rule": "This is a one-split OOS smoke evaluation, not final walk-forward evidence. Final conclusions require repeating the protocol across all splits and comparing against the full baseline suite."
+}

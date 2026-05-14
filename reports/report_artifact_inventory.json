@@ -1,0 +1,244 @@
+{
+  "artifact_count": 34,
+  "missing_count": 0,
+  "artifacts": [
+    {
+      "path": "docs/experimental_protocol.md",
+      "category": "protocol",
+      "description": "Experimental integrity protocol and interpretation rules.",
+      "exists": true,
+      "size_bytes": 5859
+    },
+    {
+      "path": "docs/report_index.md",
+      "category": "documentation",
+      "description": "Human-readable index of reports and generated artifacts.",
+      "exists": true,
+      "size_bytes": 7049
+    },
+    {
+      "path": "reports/data_quality_prices.json",
+      "category": "data_quality",
+      "description": "Raw OHLCV data quality report.",
+      "exists": true,
+      "size_bytes": 782
+    },
+    {
+      "path": "reports/feature_quality_report.json",
+      "category": "features",
+      "description": "Technical feature generation quality report.",
+      "exists": true,
+      "size_bytes": 2478
+    },
+    {
+      "path": "reports/walk_forward_splits.json",
+      "category": "walk_forward",
+      "description": "Complete walk-forward split definition.",
+      "exists": true,
+      "size_bytes": 1900
+    },
+    {
+      "path": "reports/baseline_metrics.json",
+      "category": "baseline_full_period",
+      "description": "Machine-readable full-period baseline metrics.",
+      "exists": true,
+      "size_bytes": 3123
+    },
+    {
+      "path": "reports/baseline_metrics_summary.md",
+      "category": "baseline_full_period",
+      "description": "Generated Markdown summary of full-period baseline metrics.",
+      "exists": true,
+      "size_bytes": 1600
+    },
+    {
+      "path": "reports/evaluate_baselines_run.log",
+      "category": "baseline_full_period",
+      "description": "Run log for full-period baseline evaluation.",
+      "exists": true,
+      "size_bytes": 1338
+    },
+    {
+      "path": "reports/walk_forward_baseline_metrics.json",
+      "category": "baseline_walk_forward",
+      "description": "Machine-readable walk-forward OOS baseline metrics.",
+      "exists": true,
+      "size_bytes": 30393
+    },
+    {
+      "path": "reports/walk_forward_baseline_summary.md",
+      "category": "baseline_walk_forward",
+      "description": "Generated Markdown summary of walk-forward OOS baseline metrics.",
+      "exists": true,
+      "size_bytes": 2196
+    },
+    {
+      "path": "reports/evaluate_walk_forward_baselines_run.log",
+      "category": "baseline_walk_forward",
+      "description": "Run log for walk-forward baseline evaluation.",
+      "exists": true,
+      "size_bytes": 1738
+    },
+    {
+      "path": "reports/walk_forward_baseline_oos_equity.parquet",
+      "category": "stitched_oos_equity",
+      "description": "Stitched OOS equity curves for baseline strategies.",
+      "exists": true,
+      "size_bytes": 183048
+    },
+    {
+      "path": "reports/walk_forward_baseline_oos_equity_summary.json",
+      "category": "stitched_oos_equity",
+      "description": "Machine-readable stitched OOS equity summary.",
+      "exists": true,
+      "size_bytes": 5657
+    },
+    {
+      "path": "reports/walk_forward_baseline_oos_equity_summary.md",
+      "category": "stitched_oos_equity",
+      "description": "Generated Markdown summary of stitched OOS equity metrics.",
+      "exists": true,
+      "size_bytes": 2278
+    },
+    {
+      "path": "reports/build_walk_forward_oos_equity_run.log",
+      "category": "stitched_oos_equity",
+      "description": "Run log for stitched OOS equity generation.",
+      "exists": true,
+      "size_bytes": 2040
+    },
+    {
+      "path": "reports/factor_rotation_grid_smoke.json",
+      "category": "factor_rotation_smoke",
+      "description": "Train-only deterministic factor-rotation grid smoke JSON report.",
+      "exists": true,
+      "size_bytes": 14280
+    },
+    {
+      "path": "reports/factor_rotation_grid_smoke_summary.md",
+      "category": "factor_rotation_smoke",
+      "description": "Markdown summary for factor-rotation grid smoke evaluation.",
+      "exists": true,
+      "size_bytes": 2272
+    },
+    {
+      "path": "reports/factor_rotation_grid_smoke_run.log",
+      "category": "factor_rotation_smoke",
+      "description": "Run log for factor-rotation grid smoke evaluation.",
+      "exists": true,
+      "size_bytes": 1940
+    },
+    {
+      "path": "reports/nsga2_train_smoke.json",
+      "category": "nsga2_train_smoke",
+      "description": "Train-only NSGA-II optimizer smoke JSON report.",
+      "exists": true,
+      "size_bytes": 81846
+    },
+    {
+      "path": "reports/nsga2_train_smoke_summary.md",
+      "category": "nsga2_train_smoke",
+      "description": "Markdown summary for train-only NSGA-II smoke.",
+      "exists": true,
+      "size_bytes": 4446
+    },
+    {
+      "path": "reports/nsga2_train_smoke_run.log",
+      "category": "nsga2_train_smoke",
+      "description": "Run log for train-only NSGA-II smoke.",
+      "exists": true,
+      "size_bytes": 2116
+    },
+    {
+      "path": "reports/one_split_optimizer_selection.json",
+      "category": "one_split_optimizer_selection",
+      "description": "One-split train-to-test optimizer selection JSON report.",
+      "exists": true,
+      "size_bytes": 15813
+    },
+    {
+      "path": "reports/one_split_optimizer_selection_summary.md",
+      "category": "one_split_optimizer_selection",
+      "description": "Markdown summary for one-split optimizer selection.",
+      "exists": true,
+      "size_bytes": 2101
+    },
+    {
+      "path": "reports/one_split_optimizer_selection_run.log",
+      "category": "one_split_optimizer_selection",
+      "description": "Run log for one-split optimizer selection.",
+      "exists": true,
+      "size_bytes": 1968
+    },
+    {
+      "path": "reports/walk_forward_optimizer_selection.json",
+      "category": "walk_forward_optimizer_selection",
+      "description": "Full walk-forward optimizer selection JSON report.",
+      "exists": true,
+      "size_bytes": 72239
+    },
+    {
+      "path": "reports/walk_forward_optimizer_selection_summary.md",
+      "category": "walk_forward_optimizer_selection",
+      "description": "Markdown summary for full walk-forward optimizer selection.",
+      "exists": true,
+      "size_bytes": 3205
+    },
+    {
+      "path": "reports/walk_forward_optimizer_selection_run.log",
+      "category": "walk_forward_optimizer_selection",
+      "description": "Run log for full walk-forward optimizer selection.",
+      "exists": true,
+      "size_bytes": 11294
+    },
+    {
+      "path": "reports/walk_forward_optimizer_stitched_oos_equity.parquet",
+      "category": "walk_forward_optimizer_stitched_oos",
+      "description": "Stitched OOS equity curves for optimizer and baselines.",
+      "exists": true,
+      "size_bytes": 221208
+    },
+    {
+      "path": "reports/walk_forward_optimizer_stitched_oos_equity_summary.json",
+      "category": "walk_forward_optimizer_stitched_oos",
+      "description": "JSON summary for stitched optimizer OOS equity.",
+      "exists": true,
+      "size_bytes": 6839
+    },
+    {
+      "path": "reports/walk_forward_optimizer_stitched_oos_equity_summary.md",
+      "category": "walk_forward_optimizer_stitched_oos",
+      "description": "Markdown summary for stitched optimizer OOS equity.",
+      "exists": true,
+      "size_bytes": 1887
+    },
+    {
+      "path": "reports/build_walk_forward_optimizer_stitched_oos_equity_run.log",
+      "category": "walk_forward_optimizer_stitched_oos",
+      "description": "Run log for stitched optimizer OOS equity generation.",
+      "exists": true,
+      "size_bytes": 2578
+    },
+    {
+      "path": "notebooks/01_research_results_review.ipynb",
+      "category": "final_research_notebook",
+      "description": "Final research notebook with visible mixed OOS results.",
+      "exists": true,
+      "size_bytes": 9538
+    },
+    {
+      "path": "reports/final_project_hygiene_check.json",
+      "category": "final_quality_gate",
+      "description": "Final repository hygiene check report.",
+      "exists": true,
+      "size_bytes": 1214
+    },
+    {
+      "path": "docs/final_release_checklist.md",
+      "category": "final_quality_gate",
+      "description": "Final release checklist for GitHub readiness.",
+      "exists": true,
+      "size_bytes": 2634
+    }
+  ]
+}

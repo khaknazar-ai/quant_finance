@@ -1,0 +1,36 @@
+﻿project:
+  name: "Evolutionary Quant Finance Research Pipeline"
+  version: "0.1.0"
+
+data:
+  source: "yfinance"
+  start_date: "2010-01-01"
+  end_date: null
+  frequency: "1d"
+  adjusted_prices: true
+
+universe:
+  benchmark: "SPY"
+  cash_proxy: "BIL"
+  tickers:
+    - "SPY"
+    - "QQQ"
+    - "IWM"
+    - "EFA"
+    - "EEM"
+    - "TLT"
+    - "IEF"
+    - "LQD"
+    - "HYG"
+    - "GLD"
+    - "DBC"
+    - "XLK"
+    - "XLF"
+    - "XLE"
+    - "XLV"
+
+quality:
+  max_missing_ratio_per_ticker: 0.05
+  max_duplicate_rows: 0
+  allow_non_positive_prices: false
+  allow_negative_volume: false

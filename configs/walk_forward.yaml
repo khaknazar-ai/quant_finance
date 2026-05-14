@@ -1,0 +1,14 @@
+﻿walk_forward:
+  train_years: 6
+  test_years: 1
+  step_years: 1
+  min_train_observations: 1000
+  rebalance_frequency: "M"
+
+backtest:
+  initial_capital: 100000.0
+  transaction_cost_bps: 10
+  slippage_bps: 0
+  allow_short: false
+  allow_leverage: false
+  max_asset_weight: 0.40

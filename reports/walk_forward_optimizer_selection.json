@@ -1,0 +1,1880 @@
+{
+  "evaluation_type": "walk_forward_optimizer_selection_oos",
+  "protocol": "For each split, NSGA-II is fit only on the train window. A single candidate is selected by a fixed train metric before the test window is evaluated. Test data is not used for selection.",
+  "selection_rule": {
+    "metric": "sharpe",
+    "direction": "maximize",
+    "candidate_pool": "all_valid_train_evaluations",
+    "test_data_used_for_selection": false
+  },
+  "optimizer_config": {
+    "population_size": 12,
+    "generations": 3,
+    "base_seed": 42,
+    "seed_policy": "base_seed + split_index"
+  },
+  "baseline_config": {
+    "benchmark_ticker": "SPY",
+    "momentum_lookback_days": 252,
+    "momentum_top_k": 5,
+    "momentum_rebalance_frequency": "ME",
+    "transaction_cost_bps": 10.0
+  },
+  "risk_free_rate": 0.0,
+  "evaluated_split_count": 9,
+  "split_reports": [
+    {
+      "split_index": 0,
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "test_start": "2017-01-01",
+      "test_end": "2017-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 42,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 9
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 126,
+          "drawdown_window": 252,
+          "momentum_weight": 1.2633287982441297,
+          "volatility_weight": 1.5161754801707477,
+          "drawdown_weight": 0.7468866844613231,
+          "top_k": 6,
+          "max_asset_weight": 0.2801312177264726,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v126_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.280131",
+        "train_start": "2011-01-04",
+        "train_end": "2016-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.10391134525013301,
+          "sharpe": 1.3260238200410757,
+          "sortino": 1.7884711556131208,
+          "max_drawdown": -0.08853414685979921,
+          "calmar": 1.1736866388364797,
+          "annualized_volatility": 0.07679152973192659,
+          "monthly_win_rate": 0.6610169491525424,
+          "cumulative_return": 0.625259675721956,
+          "final_equity": 1.625259675721956
+        },
+        "objectives": {
+          "negative_sharpe": -1.3260238200410757,
+          "negative_cagr": -0.10391134525013301,
+          "max_drawdown_abs": 0.08853414685979921,
+          "average_turnover": 0.016424340333871836
+        },
+        "turnover_summary": {
+          "average_turnover": 0.016424340333871836,
+          "total_turnover": 20.333333333333332,
+          "max_turnover": 0.9999999999999999,
+          "rebalance_count": 44,
+          "turnover_observation_count": 1238
+        },
+        "return_start": "2012-02-01",
+        "return_end": "2016-12-30",
+        "return_observation_count": 1238,
+        "candidate_id": "evaluation_0022"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v126_d252_mw1.26333_vw1.51618_dw0.746887_top6_maxw0.280131_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 126,
+          "drawdown_window": 252,
+          "momentum_weight": 1.2633287982441297,
+          "volatility_weight": 1.5161754801707477,
+          "drawdown_weight": 0.7468866844613231,
+          "top_k": 6,
+          "max_asset_weight": 0.2801312177264726,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.16480916728389672,
+          "sharpe": 2.6028106821013304,
+          "sortino": 3.283846784635451,
+          "max_drawdown": -0.01810256475353933,
+          "calmar": 9.104188800190537,
+          "annualized_volatility": 0.059303346495979875,
+          "monthly_win_rate": 1.0,
+          "cumulative_return": 0.1500945575703585,
+          "final_equity": 1.1500945575703585
+        },
+        "turnover_summary": {
+          "average_turnover": 0.02453102453102453,
+          "total_turnover": 5.666666666666666,
+          "max_turnover": 0.9999999999999999,
+          "rebalance_count": 9,
+          "turnover_observation_count": 231
+        },
+        "return_start": "2017-02-01",
+        "return_end": "2017-12-29",
+        "return_observation_count": 231
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": 0.060897822033763704,
+        "sharpe_test_minus_train": 1.2767868620602547,
+        "max_drawdown_test_minus_train": 0.07043158210625988,
+        "calmar_test_minus_train": 7.930502161354057
+      },
+      "test_common_window": {
+        "start": "2017-02-01",
+        "end": "2017-12-29",
+        "observation_count": 231
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.16480916728389672,
+          "sharpe": 2.6028106821013304,
+          "sortino": 3.283846784635451,
+          "max_drawdown": -0.01810256475353933,
+          "calmar": 9.104188800190537,
+          "annualized_volatility": 0.059303346495979875,
+          "monthly_win_rate": 1.0,
+          "cumulative_return": 0.1500945575703585,
+          "final_equity": 1.1500945575703585
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.21524015788685102,
+          "sharpe": 2.915232517324238,
+          "sortino": 3.8095809037360673,
+          "max_drawdown": -0.02610074537757945,
+          "calmar": 8.246513836027933,
+          "annualized_volatility": 0.0676785681113421,
+          "monthly_win_rate": 1.0,
+          "cumulative_return": 0.1956578965049629,
+          "final_equity": 1.195657896504963
+        },
+        "equal_weight": {
+          "cagr": 0.15915153381890246,
+          "sharpe": 3.032175900612172,
+          "sortino": 4.371229348058576,
+          "max_drawdown": -0.019963216040509102,
+          "calmar": 7.972239217165922,
+          "annualized_volatility": 0.0491173293268606,
+          "monthly_win_rate": 1.0,
+          "cumulative_return": 0.14497287033860196,
+          "final_equity": 1.144972870338602
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.2180833791706549,
+          "sharpe": 2.1783770758858556,
+          "sortino": 2.961485536320483,
+          "max_drawdown": -0.03817022186232355,
+          "calmar": 5.713442797300509,
+          "annualized_volatility": 0.09255762263068072,
+          "monthly_win_rate": 0.9090909090909091,
+          "cumulative_return": 0.19822193547205758,
+          "final_equity": 1.1982219354720576
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.2135933568599504,
+          "sharpe": 2.1416954606212517,
+          "sortino": 2.9111725547602605,
+          "max_drawdown": -0.03855561749398673,
+          "calmar": 5.539876436767306,
+          "annualized_volatility": 0.09241104352467898,
+          "monthly_win_rate": 0.9090909090909091,
+          "cumulative_return": 0.19417257001912036,
+          "final_equity": 1.1941725700191204
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "cagr",
+          "value": 0.2180833791706549
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "equal_weight",
+          "metric": "sharpe",
+          "value": 3.032175900612172
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.01810256475353933
+        },
+        "highest_test_calmar": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "calmar",
+          "value": 9.104188800190537
+        }
+      }
+    },
+    {
+      "split_index": 1,
+      "train_start": "2012-01-01",
+      "train_end": "2017-12-31",
+      "test_start": "2018-01-01",
+      "test_end": "2018-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 43,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 12
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 21,
+          "drawdown_window": 63,
+          "momentum_weight": 1.67842516502206,
+          "volatility_weight": 1.174286095176117,
+          "drawdown_weight": 0.45892563318821855,
+          "top_k": 5,
+          "max_asset_weight": 0.28748544987684416,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v21_d63_mw1.67843_vw1.17429_dw0.458926_top5_maxw0.287485",
+        "train_start": "2012-01-01",
+        "train_end": "2017-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.11721245825115023,
+          "sharpe": 1.2978763166191043,
+          "sortino": 1.736795177841648,
+          "max_drawdown": -0.10102568422180913,
+          "calmar": 1.1602243444726579,
+          "annualized_volatility": 0.08843029684638617,
+          "monthly_win_rate": 0.676923076923077,
+          "cumulative_return": 0.8211821738466691,
+          "final_equity": 1.8211821738466691
+        },
+        "objectives": {
+          "negative_sharpe": -1.2978763166191043,
+          "negative_cagr": -0.11721245825115023,
+          "max_drawdown_abs": 0.10102568422180913,
+          "average_turnover": 0.0318415260454879
+        },
+        "turnover_summary": {
+          "average_turnover": 0.0318415260454879,
+          "total_turnover": 43.400000000000006,
+          "max_turnover": 1.9999999999999998,
+          "rebalance_count": 56,
+          "turnover_observation_count": 1363
+        },
+        "return_start": "2012-08-01",
+        "return_end": "2017-12-29",
+        "return_observation_count": 1363,
+        "candidate_id": "evaluation_0028"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v21_d63_mw1.67843_vw1.17429_dw0.458926_top5_maxw0.287485_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 21,
+          "drawdown_window": 63,
+          "momentum_weight": 1.67842516502206,
+          "volatility_weight": 1.174286095176117,
+          "drawdown_weight": 0.45892563318821855,
+          "top_k": 5,
+          "max_asset_weight": 0.28748544987684416,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": -0.07071539106933922,
+          "sharpe": -0.4676938314735575,
+          "sortino": -0.5539781542482917,
+          "max_drawdown": -0.10366200802005499,
+          "calmar": -0.6821726920016662,
+          "annualized_volatility": 0.13677419464646628,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": -0.06474635496208614,
+          "final_equity": 0.9352536450379139
+        },
+        "turnover_summary": {
+          "average_turnover": 0.03739130434782609,
+          "total_turnover": 8.6,
+          "max_turnover": 1.2,
+          "rebalance_count": 10,
+          "turnover_observation_count": 230
+        },
+        "return_start": "2018-02-01",
+        "return_end": "2018-12-31",
+        "return_observation_count": 230
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": -0.18792784932048945,
+        "sharpe_test_minus_train": -1.7655701480926618,
+        "max_drawdown_test_minus_train": -0.0026363237982458543,
+        "calmar_test_minus_train": -1.842397036474324
+      },
+      "test_common_window": {
+        "start": "2018-02-01",
+        "end": "2018-12-31",
+        "observation_count": 230
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": -0.07071539106933922,
+          "sharpe": -0.4676938314735575,
+          "sortino": -0.5539781542482917,
+          "max_drawdown": -0.10366200802005499,
+          "calmar": -0.6821726920016662,
+          "annualized_volatility": 0.13677419464646628,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": -0.06474635496208614,
+          "final_equity": 0.9352536450379139
+        },
+        "buy_hold_SPY": {
+          "cagr": -0.10534098482219723,
+          "sharpe": -0.546002387082132,
+          "sortino": -0.6757513801161387,
+          "max_drawdown": -0.1934892733696919,
+          "calmar": -0.5444280346276694,
+          "annualized_volatility": 0.17561372468211492,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": -0.09660451480900767,
+          "final_equity": 0.9033954851909923
+        },
+        "equal_weight": {
+          "cagr": -0.09728368114175368,
+          "sharpe": -0.8486556960256422,
+          "sortino": -1.1329307929924937,
+          "max_drawdown": -0.13374059232946844,
+          "calmar": -0.727405789426268,
+          "annualized_volatility": 0.11306265850175995,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": -0.08918172448679129,
+          "final_equity": 0.9108182755132087
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": -0.1688256989254081,
+          "sharpe": -0.8845266119731702,
+          "sortino": -1.122459705823462,
+          "max_drawdown": -0.22538862436953344,
+          "calmar": -0.7490426786074695,
+          "annualized_volatility": 0.18884865681863883,
+          "monthly_win_rate": 0.45454545454545453,
+          "cumulative_return": -0.1552987955724161,
+          "final_equity": 0.8447012044275839
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": -0.17226675672987024,
+          "sharpe": -0.9070287523780549,
+          "sortino": -1.1516885647469854,
+          "max_drawdown": -0.2256949422998431,
+          "calmar": -0.7632725615136214,
+          "annualized_volatility": 0.1887538188877444,
+          "monthly_win_rate": 0.36363636363636365,
+          "cumulative_return": -0.1584911335459951,
+          "final_equity": 0.8415088664540049
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "cagr",
+          "value": -0.07071539106933922
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "sharpe",
+          "value": -0.4676938314735575
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.10366200802005499
+        },
+        "highest_test_calmar": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "calmar",
+          "value": -0.5444280346276694
+        }
+      }
+    },
+    {
+      "split_index": 2,
+      "train_start": "2013-01-01",
+      "train_end": "2018-12-31",
+      "test_start": "2019-01-01",
+      "test_end": "2019-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 44,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 12
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 21,
+          "drawdown_window": 63,
+          "momentum_weight": 1.0939882237488945,
+          "volatility_weight": 1.92467455032998,
+          "drawdown_weight": 0.4419054206702852,
+          "top_k": 2,
+          "max_asset_weight": 0.4498671445203014,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v21_d63_mw1.09399_vw1.92467_dw0.441905_top2_maxw0.449867",
+        "train_start": "2013-01-01",
+        "train_end": "2018-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.05192981259814888,
+          "sharpe": 0.9044431398648503,
+          "sortino": 1.1877837942631106,
+          "max_drawdown": -0.06978001364831521,
+          "calmar": 0.7441932135449316,
+          "annualized_volatility": 0.05782974602768727,
+          "monthly_win_rate": 0.676923076923077,
+          "cumulative_return": 0.31524821252746427,
+          "final_equity": 1.3152482125274643
+        },
+        "objectives": {
+          "negative_sharpe": -0.9044431398648503,
+          "negative_cagr": -0.05192981259814888,
+          "max_drawdown_abs": 0.06978001364831521,
+          "average_turnover": 0.036279608429056566
+        },
+        "turnover_summary": {
+          "average_turnover": 0.036279608429056566,
+          "total_turnover": 49.48538589723316,
+          "max_turnover": 1.7994685780812056,
+          "rebalance_count": 43,
+          "turnover_observation_count": 1364
+        },
+        "return_start": "2013-08-01",
+        "return_end": "2018-12-31",
+        "return_observation_count": 1364,
+        "candidate_id": "evaluation_0018"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v21_d63_mw1.09399_vw1.92467_dw0.441905_top2_maxw0.449867_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 21,
+          "drawdown_window": 63,
+          "momentum_weight": 1.0939882237488945,
+          "volatility_weight": 1.92467455032998,
+          "drawdown_weight": 0.4419054206702852,
+          "top_k": 2,
+          "max_asset_weight": 0.4498671445203014,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.04333937558107026,
+          "sharpe": 0.9405292107764336,
+          "sortino": 1.2329975939139877,
+          "max_drawdown": -0.028410274335919916,
+          "calmar": 1.5254824740032538,
+          "annualized_volatility": 0.04624650320792503,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.03965711834753405,
+          "final_equity": 1.039657118347534
+        },
+        "turnover_summary": {
+          "average_turnover": 0.03505458268989362,
+          "total_turnover": 8.097608601365426,
+          "max_turnover": 1.7994685780812056,
+          "rebalance_count": 8,
+          "turnover_observation_count": 231
+        },
+        "return_start": "2019-02-01",
+        "return_end": "2019-12-31",
+        "return_observation_count": 231
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": -0.008590437017078623,
+        "sharpe_test_minus_train": 0.036086070911583334,
+        "max_drawdown_test_minus_train": 0.04136973931239529,
+        "calmar_test_minus_train": 0.7812892604583221
+      },
+      "test_common_window": {
+        "start": "2019-02-01",
+        "end": "2019-12-31",
+        "observation_count": 231
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.04333937558107026,
+          "sharpe": 0.9405292107764336,
+          "sortino": 1.2329975939139877,
+          "max_drawdown": -0.028410274335919916,
+          "calmar": 1.5254824740032538,
+          "annualized_volatility": 0.04624650320792503,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.03965711834753405,
+          "final_equity": 1.039657118347534
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.23666008564817176,
+          "sharpe": 1.8540968585099058,
+          "sortino": 2.213711683157972,
+          "max_drawdown": -0.06618314295787431,
+          "calmar": 3.575836309236724,
+          "annualized_volatility": 0.11839108450395276,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.2149623364379607,
+          "final_equity": 1.2149623364379607
+        },
+        "equal_weight": {
+          "cagr": 0.16472224357275933,
+          "sharpe": 2.0361723986571025,
+          "sortino": 2.6188062590686445,
+          "max_drawdown": -0.0397997594651478,
+          "calmar": 4.1387748515667475,
+          "annualized_volatility": 0.07633654692006683,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.15001588382645203,
+          "final_equity": 1.150015883826452
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.13228498857610682,
+          "sharpe": 1.7807581334332008,
+          "sortino": 2.2022367875419473,
+          "max_drawdown": -0.05207392916521192,
+          "calmar": 2.5403304628005685,
+          "annualized_volatility": 0.07120476348507475,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.12062275577734383,
+          "final_equity": 1.1206227557773438
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.12466588215442442,
+          "sharpe": 1.6886936049418904,
+          "sortino": 2.0893021408563475,
+          "max_drawdown": -0.05207392916521136,
+          "calmar": 2.394017201177687,
+          "annualized_volatility": 0.0710814709076419,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.11370856735088042,
+          "final_equity": 1.1137085673508804
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "cagr",
+          "value": 0.23666008564817176
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "equal_weight",
+          "metric": "sharpe",
+          "value": 2.0361723986571025
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.028410274335919916
+        },
+        "highest_test_calmar": {
+          "strategy_name": "equal_weight",
+          "metric": "calmar",
+          "value": 4.1387748515667475
+        }
+      }
+    },
+    {
+      "split_index": 3,
+      "train_start": "2014-01-01",
+      "train_end": "2019-12-31",
+      "test_start": "2020-01-01",
+      "test_end": "2020-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 45,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 7
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 0.01519478565060478,
+          "volatility_weight": 0.17594095930701695,
+          "drawdown_weight": 0.2507791585194894,
+          "top_k": 5,
+          "max_asset_weight": 0.33190760091202465,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v63_d126_mw0.0151948_vw0.175941_dw0.250779_top5_maxw0.331908",
+        "train_start": "2014-01-01",
+        "train_end": "2019-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.06420081033705904,
+          "sharpe": 0.9826347989412741,
+          "sortino": 1.2764081811429069,
+          "max_drawdown": -0.11013572743034739,
+          "calmar": 0.5829244681537266,
+          "annualized_volatility": 0.06551653166546065,
+          "monthly_win_rate": 0.6307692307692307,
+          "cumulative_return": 0.4004593814022879,
+          "final_equity": 1.4004593814022879
+        },
+        "objectives": {
+          "negative_sharpe": -0.9826347989412741,
+          "negative_cagr": -0.06420081033705904,
+          "max_drawdown_abs": 0.11013572743034739,
+          "average_turnover": 0.025366568914956013
+        },
+        "turnover_summary": {
+          "average_turnover": 0.025366568914956013,
+          "total_turnover": 34.6,
+          "max_turnover": 1.5999999999999999,
+          "rebalance_count": 55,
+          "turnover_observation_count": 1364
+        },
+        "return_start": "2014-08-01",
+        "return_end": "2019-12-31",
+        "return_observation_count": 1364,
+        "candidate_id": "evaluation_0033"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v63_d126_mw0.0151948_vw0.175941_dw0.250779_top5_maxw0.331908_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 0.01519478565060478,
+          "volatility_weight": 0.17594095930701695,
+          "drawdown_weight": 0.2507791585194894,
+          "top_k": 5,
+          "max_asset_weight": 0.33190760091202465,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.11661942518332036,
+          "sharpe": 0.9887618055750484,
+          "sortino": 1.1049719907475137,
+          "max_drawdown": -0.12904945962504755,
+          "calmar": 0.9036800736876963,
+          "annualized_volatility": 0.11869938624858732,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.10688672881147654,
+          "final_equity": 1.1068867288114765
+        },
+        "turnover_summary": {
+          "average_turnover": 0.02327586206896552,
+          "total_turnover": 5.4,
+          "max_turnover": 1.2,
+          "rebalance_count": 9,
+          "turnover_observation_count": 232
+        },
+        "return_start": "2020-02-03",
+        "return_end": "2020-12-31",
+        "return_observation_count": 232
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": 0.05241861484626131,
+        "sharpe_test_minus_train": 0.006127006633774301,
+        "max_drawdown_test_minus_train": -0.01891373219470016,
+        "calmar_test_minus_train": 0.32075560553396976
+      },
+      "test_common_window": {
+        "start": "2020-02-03",
+        "end": "2020-12-31",
+        "observation_count": 232
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.11661942518332036,
+          "sharpe": 0.9887618055750484,
+          "sortino": 1.1049719907475137,
+          "max_drawdown": -0.12904945962504755,
+          "calmar": 0.9036800736876963,
+          "annualized_volatility": 0.11869938624858732,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.10688672881147654,
+          "final_equity": 1.1068867288114765
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.20113918613849613,
+          "sharpe": 0.7028475158842783,
+          "sortino": 0.7975474574246901,
+          "max_drawdown": -0.3371726321428832,
+          "calmar": 0.5965465965021136,
+          "annualized_volatility": 0.3469594968618235,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.18379473553101344,
+          "final_equity": 1.1837947355310134
+        },
+        "equal_weight": {
+          "cagr": 0.16864113899990185,
+          "sharpe": 0.7666098233318143,
+          "sortino": 0.8261104147113362,
+          "max_drawdown": -0.25661793934156407,
+          "calmar": 0.6571681599213406,
+          "annualized_volatility": 0.24171545044352663,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.15427595536164462,
+          "final_equity": 1.1542759553616446
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.22990825160834838,
+          "sharpe": 1.1800770705989374,
+          "sortino": 1.3130812486602816,
+          "max_drawdown": -0.1777228657379618,
+          "calmar": 1.2936334931000368,
+          "annualized_volatility": 0.19090302510949012,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.20987348787449922,
+          "final_equity": 1.2098734878744992
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.2232840941166363,
+          "sharpe": 1.1524645811780552,
+          "sortino": 1.2820037642002706,
+          "max_drawdown": -0.178044910337252,
+          "calmar": 1.254088609967521,
+          "annualized_volatility": 0.19076442933473312,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.20387311376095685,
+          "final_equity": 1.2038731137609568
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "cagr",
+          "value": 0.22990825160834838
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "sharpe",
+          "value": 1.1800770705989374
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.12904945962504755
+        },
+        "highest_test_calmar": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "calmar",
+          "value": 1.2936334931000368
+        }
+      }
+    },
+    {
+      "split_index": 4,
+      "train_start": "2015-01-01",
+      "train_end": "2020-12-31",
+      "test_start": "2021-01-01",
+      "test_end": "2021-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 46,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 12
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 252,
+          "momentum_weight": 0.9982932836618883,
+          "volatility_weight": 1.5898102324060355,
+          "drawdown_weight": 0.1103445784074153,
+          "top_k": 5,
+          "max_asset_weight": 0.4318708197560143,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v63_d252_mw0.998293_vw1.58981_dw0.110345_top5_maxw0.431871",
+        "train_start": "2015-01-01",
+        "train_end": "2020-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.09933956182428938,
+          "sharpe": 1.3699771270452608,
+          "sortino": 1.6258235118989588,
+          "max_drawdown": -0.1499366458022694,
+          "calmar": 0.6625435782743501,
+          "annualized_volatility": 0.07098615035439675,
+          "monthly_win_rate": 0.7166666666666667,
+          "cumulative_return": 0.6050777118483608,
+          "final_equity": 1.6050777118483608
+        },
+        "objectives": {
+          "negative_sharpe": -1.3699771270452608,
+          "negative_cagr": -0.09933956182428938,
+          "max_drawdown_abs": 0.1499366458022694,
+          "average_turnover": 0.01858617950754567
+        },
+        "turnover_summary": {
+          "average_turnover": 0.01858617950754567,
+          "total_turnover": 23.4,
+          "max_turnover": 1.0,
+          "rebalance_count": 40,
+          "turnover_observation_count": 1259
+        },
+        "return_start": "2016-01-04",
+        "return_end": "2020-12-31",
+        "return_observation_count": 1259,
+        "candidate_id": "evaluation_0001"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v63_d252_mw0.998293_vw1.58981_dw0.110345_top5_maxw0.431871_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 252,
+          "momentum_weight": 0.9982932836618883,
+          "volatility_weight": 1.5898102324060355,
+          "drawdown_weight": 0.1103445784074153,
+          "top_k": 5,
+          "max_asset_weight": 0.4318708197560143,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.1338455637909235,
+          "sharpe": 1.6451249017987986,
+          "sortino": 2.060645002320648,
+          "max_drawdown": -0.054421503296770424,
+          "calmar": 2.4594242290779644,
+          "annualized_volatility": 0.07823076474408096,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.12315763562182336,
+          "final_equity": 1.1231576356218234
+        },
+        "turnover_summary": {
+          "average_turnover": 0.026609442060085836,
+          "total_turnover": 6.2,
+          "max_turnover": 1.0,
+          "rebalance_count": 9,
+          "turnover_observation_count": 233
+        },
+        "return_start": "2021-02-01",
+        "return_end": "2021-12-31",
+        "return_observation_count": 233
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": 0.034506001966634114,
+        "sharpe_test_minus_train": 0.2751477747535378,
+        "max_drawdown_test_minus_train": 0.09551514250549897,
+        "calmar_test_minus_train": 1.7968806508036144
+      },
+      "test_common_window": {
+        "start": "2021-02-01",
+        "end": "2021-12-31",
+        "observation_count": 233
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.1338455637909235,
+          "sharpe": 1.6451249017987986,
+          "sortino": 2.060645002320648,
+          "max_drawdown": -0.054421503296770424,
+          "calmar": 2.4594242290779644,
+          "annualized_volatility": 0.07823076474408096,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.12315763562182336,
+          "final_equity": 1.1231576356218234
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.32870990517030996,
+          "sharpe": 2.3085955368163114,
+          "sortino": 3.416027394009096,
+          "max_drawdown": -0.05114132838716334,
+          "calmar": 6.4274807780084435,
+          "annualized_volatility": 0.126637068530775,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.3005406447325507,
+          "final_equity": 1.3005406447325507
+        },
+        "equal_weight": {
+          "cagr": 0.18056472250848943,
+          "sharpe": 1.820797687199705,
+          "sortino": 2.7533909712032023,
+          "max_drawdown": -0.040752236474277614,
+          "calmar": 4.430792960834432,
+          "annualized_volatility": 0.09359104306969183,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.16588162970733622,
+          "final_equity": 1.1658816297073362
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.19284991624644832,
+          "sharpe": 1.1275264879793883,
+          "sortino": 1.7353956132177961,
+          "max_drawdown": -0.07662603017823566,
+          "calmar": 2.516767680615459,
+          "annualized_volatility": 0.16909001138787869,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.17709489957045066,
+          "final_equity": 1.1770948995704507
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.18647994569990511,
+          "sharpe": 1.0974964043470798,
+          "sortino": 1.6867119918884623,
+          "max_drawdown": -0.07698469986851153,
+          "calmar": 2.422298794674909,
+          "annualized_volatility": 0.1687893833974674,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.17128182269077707,
+          "final_equity": 1.171281822690777
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "cagr",
+          "value": 0.32870990517030996
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "sharpe",
+          "value": 2.3085955368163114
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "equal_weight",
+          "metric": "max_drawdown",
+          "value": -0.040752236474277614
+        },
+        "highest_test_calmar": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "calmar",
+          "value": 6.4274807780084435
+        }
+      }
+    },
+    {
+      "split_index": 5,
+      "train_start": "2016-01-01",
+      "train_end": "2021-12-31",
+      "test_start": "2022-01-01",
+      "test_end": "2022-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 47,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 12
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 252,
+          "momentum_weight": 0.3759062835762601,
+          "volatility_weight": 1.154679025990828,
+          "drawdown_weight": 0.12300056685063798,
+          "top_k": 4,
+          "max_asset_weight": 0.23372983195693217,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v63_d252_mw0.375906_vw1.15468_dw0.123001_top4_maxw0.23373",
+        "train_start": "2016-01-01",
+        "train_end": "2021-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.08237174613466847,
+          "sharpe": 1.3082060295782447,
+          "sortino": 1.4501912961304524,
+          "max_drawdown": -0.12430354068108229,
+          "calmar": 0.6626661290848056,
+          "annualized_volatility": 0.06198763515514576,
+          "monthly_win_rate": 0.7166666666666667,
+          "cumulative_return": 0.4850662244343724,
+          "final_equity": 1.4850662244343724
+        },
+        "objectives": {
+          "negative_sharpe": -1.3082060295782447,
+          "negative_cagr": -0.08237174613466847,
+          "max_drawdown_abs": 0.12430354068108229,
+          "average_turnover": 0.016708248511615485
+        },
+        "turnover_summary": {
+          "average_turnover": 0.016708248511615485,
+          "total_turnover": 21.035684876123895,
+          "max_turnover": 0.9349193278277287,
+          "rebalance_count": 39,
+          "turnover_observation_count": 1259
+        },
+        "return_start": "2017-01-03",
+        "return_end": "2021-12-31",
+        "return_observation_count": 1259,
+        "candidate_id": "evaluation_0013"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v63_d252_mw0.375906_vw1.15468_dw0.123001_top4_maxw0.23373_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 252,
+          "momentum_weight": 0.3759062835762601,
+          "volatility_weight": 1.154679025990828,
+          "drawdown_weight": 0.12300056685063798,
+          "top_k": 4,
+          "max_asset_weight": 0.23372983195693217,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": -0.07424910374932148,
+          "sharpe": -0.6661282257601118,
+          "sortino": -1.063807333282392,
+          "max_drawdown": -0.15544834088587234,
+          "calmar": -0.47764487755989604,
+          "annualized_volatility": 0.10720836583259154,
+          "monthly_win_rate": 0.45454545454545453,
+          "cumulative_return": -0.0682781162286219,
+          "final_equity": 0.9317218837713781
+        },
+        "turnover_summary": {
+          "average_turnover": 0.020236349087180274,
+          "total_turnover": 4.6745966391386435,
+          "max_turnover": 0.9349193278277287,
+          "rebalance_count": 9,
+          "turnover_observation_count": 231
+        },
+        "return_start": "2022-02-01",
+        "return_end": "2022-12-30",
+        "return_observation_count": 231
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": -0.15662084988398994,
+        "sharpe_test_minus_train": -1.9743342553383565,
+        "max_drawdown_test_minus_train": -0.031144800204790046,
+        "calmar_test_minus_train": -1.1403110066447018
+      },
+      "test_common_window": {
+        "start": "2022-02-01",
+        "end": "2022-12-30",
+        "observation_count": 231
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": -0.07424910374932148,
+          "sharpe": -0.6661282257601118,
+          "sortino": -1.063807333282392,
+          "max_drawdown": -0.15544834088587234,
+          "calmar": -0.47764487755989604,
+          "annualized_volatility": 0.10720836583259154,
+          "monthly_win_rate": 0.45454545454545453,
+          "cumulative_return": -0.0682781162286219,
+          "final_equity": 0.9317218837713781
+        },
+        "buy_hold_SPY": {
+          "cagr": -0.14761659083623568,
+          "sharpe": -0.5239982621575312,
+          "sortino": -0.8393397676207281,
+          "max_drawdown": -0.22094857768687104,
+          "calmar": -0.6681038293237549,
+          "annualized_volatility": 0.24680030857605267,
+          "monthly_win_rate": 0.45454545454545453,
+          "cumulative_return": -0.136195612415539,
+          "final_equity": 0.863804387584461
+        },
+        "equal_weight": {
+          "cagr": -0.09176526319341138,
+          "sharpe": -0.49506125269231616,
+          "sortino": -0.8093652481275152,
+          "max_drawdown": -0.1719510729331699,
+          "calmar": -0.5336707798797897,
+          "annualized_volatility": 0.16651881286265208,
+          "monthly_win_rate": 0.45454545454545453,
+          "cumulative_return": -0.08445098628647318,
+          "final_equity": 0.9155490137135268
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": -0.002829485963156686,
+          "sharpe": 0.0770782228594736,
+          "sortino": 0.11037565825468518,
+          "max_drawdown": -0.1772151822612389,
+          "calmar": -0.01596638576363985,
+          "annualized_volatility": 0.18503709474515803,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": -0.002594001563497539,
+          "final_equity": 0.9974059984365025
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": -0.007791385527221917,
+          "sharpe": 0.05000256594951199,
+          "sortino": 0.07160895168695475,
+          "max_drawdown": -0.17918311127992603,
+          "calmar": -0.04348281192109644,
+          "annualized_volatility": 0.18487348463654626,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": -0.007144428570165395,
+          "final_equity": 0.9928555714298346
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "cagr",
+          "value": -0.002829485963156686
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "sharpe",
+          "value": 0.0770782228594736
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.15544834088587234
+        },
+        "highest_test_calmar": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "calmar",
+          "value": -0.01596638576363985
+        }
+      }
+    },
+    {
+      "split_index": 6,
+      "train_start": "2017-01-01",
+      "train_end": "2022-12-31",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 48,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 12
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 1.7867790134634058,
+          "volatility_weight": 0.07713679903881832,
+          "drawdown_weight": 1.6884364310727151,
+          "top_k": 4,
+          "max_asset_weight": 0.4097825237900984,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m126_v63_d126_mw1.78678_vw0.0771368_dw1.68844_top4_maxw0.409783",
+        "train_start": "2017-01-01",
+        "train_end": "2022-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.09681957539001318,
+          "sharpe": 0.741598372236462,
+          "sortino": 0.9056886214067801,
+          "max_drawdown": -0.17162943825531995,
+          "calmar": 0.5641198641341594,
+          "annualized_volatility": 0.1374089705545548,
+          "monthly_win_rate": 0.6307692307692307,
+          "cumulative_return": 0.6496771595080966,
+          "final_equity": 1.6496771595080966
+        },
+        "objectives": {
+          "negative_sharpe": -0.741598372236462,
+          "negative_cagr": -0.09681957539001318,
+          "max_drawdown_abs": 0.17162943825531995,
+          "average_turnover": 0.040293040293040296
+        },
+        "turnover_summary": {
+          "average_turnover": 0.040293040293040296,
+          "total_turnover": 55.0,
+          "max_turnover": 2.0,
+          "rebalance_count": 54,
+          "turnover_observation_count": 1365
+        },
+        "return_start": "2017-08-01",
+        "return_end": "2022-12-30",
+        "return_observation_count": 1365,
+        "candidate_id": "evaluation_0026"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m126_v63_d126_mw1.78678_vw0.0771368_dw1.68844_top4_maxw0.409783_selected_oos",
+        "parameters": {
+          "momentum_window": 126,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 1.7867790134634058,
+          "volatility_weight": 0.07713679903881832,
+          "drawdown_weight": 1.6884364310727151,
+          "top_k": 4,
+          "max_asset_weight": 0.4097825237900984,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.05257845435911723,
+          "sharpe": 0.5021080841354889,
+          "sortino": 0.8716795483307072,
+          "max_drawdown": -0.09151377813219919,
+          "calmar": 0.5745414016582654,
+          "annualized_volatility": 0.11521417469144891,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.04788017739583661,
+          "final_equity": 1.0478801773958366
+        },
+        "turnover_summary": {
+          "average_turnover": 0.03695652173913044,
+          "total_turnover": 8.5,
+          "max_turnover": 2.0,
+          "rebalance_count": 11,
+          "turnover_observation_count": 230
+        },
+        "return_start": "2023-02-01",
+        "return_end": "2023-12-29",
+        "return_observation_count": 230
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": -0.04424112103089595,
+        "sharpe_test_minus_train": -0.23949028810097306,
+        "max_drawdown_test_minus_train": 0.08011566012312077,
+        "calmar_test_minus_train": 0.010421537524106017
+      },
+      "test_common_window": {
+        "start": "2023-02-01",
+        "end": "2023-12-29",
+        "observation_count": 230
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.05257845435911723,
+          "sharpe": 0.5021080841354889,
+          "sortino": 0.8716795483307072,
+          "max_drawdown": -0.09151377813219919,
+          "calmar": 0.5745414016582654,
+          "annualized_volatility": 0.11521417469144891,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.04788017739583661,
+          "final_equity": 1.0478801773958366
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.2067403086385653,
+          "sharpe": 1.5405251633139183,
+          "sortino": 2.4967647561324338,
+          "max_drawdown": -0.09974304027437009,
+          "calmar": 2.0727291655625337,
+          "annualized_volatility": 0.12726367709773825,
+          "monthly_win_rate": 0.6363636363636364,
+          "cumulative_return": 0.18710409651322646,
+          "final_equity": 1.1871040965132265
+        },
+        "equal_weight": {
+          "cagr": 0.09292528416481383,
+          "sharpe": 0.9962443308059759,
+          "sortino": 1.7129872609961847,
+          "max_drawdown": -0.07948187923000816,
+          "calmar": 1.1691379854759416,
+          "annualized_volatility": 0.09358062343817947,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.08447979147609352,
+          "final_equity": 1.0844797914760935
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.12248047684627839,
+          "sharpe": 1.0699130303972308,
+          "sortino": 1.682969978930933,
+          "max_drawdown": -0.08609017174425038,
+          "calmar": 1.4226998781014555,
+          "annualized_volatility": 0.11407306391248505,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.11121503164726154,
+          "final_equity": 1.1112150316472615
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.11686899928370753,
+          "sharpe": 1.0278136045938475,
+          "sortino": 1.6172219716736618,
+          "max_drawdown": -0.0860901717442506,
+          "calmar": 1.357518482259416,
+          "annualized_volatility": 0.11384190379883234,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.10614373786573417,
+          "final_equity": 1.1061437378657342
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "cagr",
+          "value": 0.2067403086385653
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "sharpe",
+          "value": 1.5405251633139183
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "equal_weight",
+          "metric": "max_drawdown",
+          "value": -0.07948187923000816
+        },
+        "highest_test_calmar": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "calmar",
+          "value": 2.0727291655625337
+        }
+      }
+    },
+    {
+      "split_index": 7,
+      "train_start": "2018-01-01",
+      "train_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 49,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 9
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 63,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 1.3419266048354372,
+          "volatility_weight": 0.24906464126020522,
+          "drawdown_weight": 0.416633211491334,
+          "top_k": 5,
+          "max_asset_weight": 0.32588747432141096,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m63_v63_d126_mw1.34193_vw0.249065_dw0.416633_top5_maxw0.325887",
+        "train_start": "2018-01-01",
+        "train_end": "2023-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.12965635468631032,
+          "sharpe": 0.9619801005008327,
+          "sortino": 1.2850388626275286,
+          "max_drawdown": -0.1911209742225528,
+          "calmar": 0.6783994023352488,
+          "annualized_volatility": 0.1364520638772416,
+          "monthly_win_rate": 0.6461538461538462,
+          "cumulative_return": 0.9336261844022897,
+          "final_equity": 1.9336261844022897
+        },
+        "objectives": {
+          "negative_sharpe": -0.9619801005008327,
+          "negative_cagr": -0.12965635468631032,
+          "max_drawdown_abs": 0.1911209742225528,
+          "average_turnover": 0.03506969919295671
+        },
+        "turnover_summary": {
+          "average_turnover": 0.03506969919295671,
+          "total_turnover": 47.8,
+          "max_turnover": 1.9999999999999998,
+          "rebalance_count": 58,
+          "turnover_observation_count": 1363
+        },
+        "return_start": "2018-08-01",
+        "return_end": "2023-12-29",
+        "return_observation_count": 1363,
+        "candidate_id": "evaluation_0034"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m63_v63_d126_mw1.34193_vw0.249065_dw0.416633_top5_maxw0.325887_selected_oos",
+        "parameters": {
+          "momentum_window": 63,
+          "volatility_window": 63,
+          "drawdown_window": 126,
+          "momentum_weight": 1.3419266048354372,
+          "volatility_weight": 0.24906464126020522,
+          "drawdown_weight": 0.416633211491334,
+          "top_k": 5,
+          "max_asset_weight": 0.32588747432141096,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.09468981311052582,
+          "sharpe": 0.7890120000688328,
+          "sortino": 1.0655311678494568,
+          "max_drawdown": -0.10544007350748619,
+          "calmar": 0.8980438837023658,
+          "annualized_volatility": 0.12448104086343414,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.08646770184736874,
+          "final_equity": 1.0864677018473687
+        },
+        "turnover_summary": {
+          "average_turnover": 0.045887445887445893,
+          "total_turnover": 10.600000000000001,
+          "max_turnover": 1.9999999999999998,
+          "rebalance_count": 11,
+          "turnover_observation_count": 231
+        },
+        "return_start": "2024-02-01",
+        "return_end": "2024-12-31",
+        "return_observation_count": 231
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": -0.03496654157578449,
+        "sharpe_test_minus_train": -0.17296810043199995,
+        "max_drawdown_test_minus_train": 0.08568090071506662,
+        "calmar_test_minus_train": 0.219644481367117
+      },
+      "test_common_window": {
+        "start": "2024-02-01",
+        "end": "2024-12-31",
+        "observation_count": 231
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.09468981311052582,
+          "sharpe": 0.7890120000688328,
+          "sortino": 1.0655311678494568,
+          "max_drawdown": -0.10544007350748619,
+          "calmar": 0.8980438837023658,
+          "annualized_volatility": 0.12448104086343414,
+          "monthly_win_rate": 0.5454545454545454,
+          "cumulative_return": 0.08646770184736874,
+          "final_equity": 1.0864677018473687
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.2525740396441656,
+          "sharpe": 1.8360087971035046,
+          "sortino": 2.388346003927894,
+          "max_drawdown": -0.08405600526835288,
+          "calmar": 3.0048303965648935,
+          "annualized_volatility": 0.1271021550334251,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.22928652926152737,
+          "final_equity": 1.2292865292615274
+        },
+        "equal_weight": {
+          "cagr": 0.11904239203511136,
+          "sharpe": 1.3249660953213747,
+          "sortino": 1.745805234299514,
+          "max_drawdown": -0.05203690122870197,
+          "calmar": 2.2876533618310693,
+          "annualized_volatility": 0.08780881749232605,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.10860285844656103,
+          "final_equity": 1.108602858446561
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.2077779161248039,
+          "sharpe": 1.4824597184733503,
+          "sortino": 1.9341476050559712,
+          "max_drawdown": -0.08959469719499502,
+          "calmar": 2.319087207500612,
+          "annualized_volatility": 0.13338133813176062,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.18892600778818847,
+          "final_equity": 1.1889260077881885
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.2033197641801956,
+          "sharpe": 1.455336804118267,
+          "sortino": 1.9004859323450047,
+          "max_drawdown": -0.08959469719499513,
+          "calmar": 2.269328102506867,
+          "annualized_volatility": 0.1333185345950685,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.18490253631151976,
+          "final_equity": 1.1849025363115198
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "cagr",
+          "value": 0.2525740396441656
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "sharpe",
+          "value": 1.8360087971035046
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "equal_weight",
+          "metric": "max_drawdown",
+          "value": -0.05203690122870197
+        },
+        "highest_test_calmar": {
+          "strategy_name": "buy_hold_SPY",
+          "metric": "calmar",
+          "value": 3.0048303965648935
+        }
+      }
+    },
+    {
+      "split_index": 8,
+      "train_start": "2019-01-01",
+      "train_end": "2024-12-31",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "optimizer_summary": {
+        "population_size": 12,
+        "generations": 3,
+        "seed": 50,
+        "evaluation_count": 36,
+        "valid_evaluation_count": 36,
+        "invalid_evaluation_count": 0,
+        "pareto_candidate_count": 9
+      },
+      "selected_train_evaluation": {
+        "parameters": {
+          "momentum_window": 63,
+          "volatility_window": 21,
+          "drawdown_window": 126,
+          "momentum_weight": 0.6633453034896524,
+          "volatility_weight": 1.5434922480314774,
+          "drawdown_weight": 0.9461855833221784,
+          "top_k": 5,
+          "max_asset_weight": 0.23745889266695724,
+          "rebalance_frequency": "ME"
+        },
+        "strategy_name": "factor_rotation_m63_v21_d126_mw0.663345_vw1.54349_dw0.946186_top5_maxw0.237459",
+        "train_start": "2019-01-01",
+        "train_end": "2024-12-31",
+        "valid": true,
+        "invalid_reason": null,
+        "metrics": {
+          "cagr": 0.0821925985012204,
+          "sharpe": 0.8847557180494035,
+          "sortino": 1.187151769216393,
+          "max_drawdown": -0.17767926381546062,
+          "calmar": 0.4625897065095138,
+          "annualized_volatility": 0.09432220344257357,
+          "monthly_win_rate": 0.6615384615384615,
+          "cumulative_return": 0.5334874770347624,
+          "final_equity": 1.5334874770347624
+        },
+        "objectives": {
+          "negative_sharpe": -0.8847557180494035,
+          "negative_cagr": -0.0821925985012204,
+          "max_drawdown_abs": 0.17767926381546062,
+          "average_turnover": 0.028592375366568914
+        },
+        "turnover_summary": {
+          "average_turnover": 0.028592375366568914,
+          "total_turnover": 39.0,
+          "max_turnover": 1.5999999999999999,
+          "rebalance_count": 58,
+          "turnover_observation_count": 1364
+        },
+        "return_start": "2019-08-01",
+        "return_end": "2024-12-31",
+        "return_observation_count": 1364,
+        "candidate_id": "evaluation_0003"
+      },
+      "selected_test_evaluation": {
+        "valid": true,
+        "invalid_reason": null,
+        "strategy_name": "factor_rotation_m63_v21_d126_mw0.663345_vw1.54349_dw0.946186_top5_maxw0.237459_selected_oos",
+        "parameters": {
+          "momentum_window": 63,
+          "volatility_window": 21,
+          "drawdown_window": 126,
+          "momentum_weight": 0.6633453034896524,
+          "volatility_weight": 1.5434922480314774,
+          "drawdown_weight": 0.9461855833221784,
+          "top_k": 5,
+          "max_asset_weight": 0.23745889266695724,
+          "rebalance_frequency": "ME"
+        },
+        "metrics": {
+          "cagr": 0.11835240592484109,
+          "sharpe": 1.4394449739229558,
+          "sortino": 2.0998885700954975,
+          "max_drawdown": -0.05636042896272464,
+          "calmar": 2.099920247291169,
+          "annualized_volatility": 0.07993443620191261,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.10748456155830755,
+          "final_equity": 1.1074845615583075
+        },
+        "turnover_summary": {
+          "average_turnover": 0.0391304347826087,
+          "total_turnover": 9.0,
+          "max_turnover": 1.2,
+          "rebalance_count": 11,
+          "turnover_observation_count": 230
+        },
+        "return_start": "2025-02-03",
+        "return_end": "2025-12-31",
+        "return_observation_count": 230
+      },
+      "selected_metric_degradation": {
+        "cagr_test_minus_train": 0.03615980742362068,
+        "sharpe_test_minus_train": 0.5546892558735523,
+        "max_drawdown_test_minus_train": 0.12131883485273598,
+        "calmar_test_minus_train": 1.637330540781655
+      },
+      "test_common_window": {
+        "start": "2025-02-03",
+        "end": "2025-12-31",
+        "observation_count": 230
+      },
+      "test_common_metrics": {
+        "optimizer_selected_net": {
+          "cagr": 0.11835240592484109,
+          "sharpe": 1.4394449739229558,
+          "sortino": 2.0998885700954975,
+          "max_drawdown": -0.05636042896272464,
+          "calmar": 2.099920247291169,
+          "annualized_volatility": 0.07993443620191261,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.10748456155830755,
+          "final_equity": 1.1074845615583075
+        },
+        "buy_hold_SPY": {
+          "cagr": 0.16148292960633004,
+          "sharpe": 0.8498447967604975,
+          "sortino": 1.0770365563591895,
+          "max_drawdown": -0.1875523871783359,
+          "calmar": 0.8610017288278102,
+          "annualized_volatility": 0.199165565988948,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.14640245640883776,
+          "final_equity": 1.1464024564088378
+        },
+        "equal_weight": {
+          "cagr": 0.17237645633966459,
+          "sharpe": 1.3599554670464753,
+          "sortino": 1.6781388956150822,
+          "max_drawdown": -0.11437166205194482,
+          "calmar": 1.5071605435039965,
+          "annualized_volatility": 0.12244191453447416,
+          "monthly_win_rate": 0.8181818181818182,
+          "cumulative_return": 0.15621186536041232,
+          "final_equity": 1.1562118653604123
+        },
+        "momentum_top_5_252d_gross": {
+          "cagr": 0.20426061243645965,
+          "sharpe": 1.3338120372557436,
+          "sortino": 1.7270522642472212,
+          "max_drawdown": -0.1466963297122822,
+          "calmar": 1.3924043828300217,
+          "annualized_volatility": 0.14749824630710565,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.1848775091589432,
+          "final_equity": 1.1848775091589432
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cagr": 0.19766617106271056,
+          "sharpe": 1.2956683975677246,
+          "sortino": 1.6796473569083163,
+          "max_drawdown": -0.14772381415218627,
+          "calmar": 1.3380792541619138,
+          "annualized_volatility": 0.14761236431173186,
+          "monthly_win_rate": 0.7272727272727273,
+          "cumulative_return": 0.17895422887461798,
+          "final_equity": 1.178954228874618
+        }
+      },
+      "test_common_metric_leaders": {
+        "highest_test_cagr": {
+          "strategy_name": "momentum_top_5_252d_gross",
+          "metric": "cagr",
+          "value": 0.20426061243645965
+        },
+        "highest_test_sharpe": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "sharpe",
+          "value": 1.4394449739229558
+        },
+        "least_severe_test_max_drawdown": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "max_drawdown",
+          "value": -0.05636042896272464
+        },
+        "highest_test_calmar": {
+          "strategy_name": "optimizer_selected_net",
+          "metric": "calmar",
+          "value": 2.099920247291169
+        }
+      }
+    }
+  ],
+  "aggregate_test_metrics": {
+    "buy_hold_SPY": {
+      "evaluated_split_count": 9,
+      "positive_cagr_fraction": 0.7777777777777778,
+      "mean_cagr": 0.1499543374527174,
+      "median_cagr": 0.2067403086385653,
+      "min_cagr": -0.14761659083623568,
+      "max_cagr": 0.32870990517030996,
+      "mean_sharpe": 1.2152389484969988,
+      "median_sharpe": 1.5405251633139183,
+      "min_sharpe": -0.546002387082132,
+      "max_sharpe": 2.915232517324238,
+      "mean_max_drawdown": -0.14070968140479134,
+      "median_max_drawdown": -0.09974304027437009,
+      "min_max_drawdown": -0.3371726321428832,
+      "max_max_drawdown": -0.02610074537757945,
+      "mean_calmar": 2.619156327419892,
+      "median_calmar": 2.0727291655625337,
+      "min_calmar": -0.6681038293237549,
+      "max_calmar": 8.246513836027933,
+      "mean_final_equity": 1.136105396462837,
+      "median_final_equity": 1.1871040965132265,
+      "min_final_equity": 0.863804387584461,
+      "max_final_equity": 1.3005406447325507
+    },
+    "equal_weight": {
+      "evaluated_split_count": 9,
+      "positive_cagr_fraction": 0.7777777777777778,
+      "mean_cagr": 0.09648609190049753,
+      "median_cagr": 0.15915153381890246,
+      "min_cagr": -0.09728368114175368,
+      "max_cagr": 0.18056472250848943,
+      "mean_sharpe": 1.1103560838062956,
+      "median_sharpe": 1.3249660953213747,
+      "min_sharpe": -0.8486556960256422,
+      "max_sharpe": 3.032175900612172,
+      "mean_max_drawdown": -0.10096836212164355,
+      "median_max_drawdown": -0.07948187923000816,
+      "min_max_drawdown": -0.25661793934156407,
+      "max_max_drawdown": -0.019963216040509102,
+      "mean_calmar": 2.322427834554821,
+      "median_calmar": 1.5071605435039965,
+      "min_calmar": -0.727405789426268,
+      "max_calmar": 7.972239217165922,
+      "mean_final_equity": 1.087867571527093,
+      "median_final_equity": 1.144972870338602,
+      "min_final_equity": 0.9108182755132087,
+      "max_final_equity": 1.1658816297073362
+    },
+    "momentum_top_5_252d_gross": {
+      "evaluated_split_count": 9,
+      "positive_cagr_fraction": 0.7777777777777778,
+      "mean_cagr": 0.1262211506800595,
+      "median_cagr": 0.19284991624644832,
+      "min_cagr": -0.1688256989254081,
+      "max_cagr": 0.22990825160834838,
+      "mean_sharpe": 1.0383861294344454,
+      "median_sharpe": 1.1800770705989374,
+      "min_sharpe": -0.8845266119731702,
+      "max_sharpe": 2.1783770758858556,
+      "mean_max_drawdown": -0.11884200580289253,
+      "median_max_drawdown": -0.08959469719499502,
+      "min_max_drawdown": -0.22538862436953344,
+      "max_max_drawdown": -0.03817022186232355,
+      "mean_calmar": 1.8259285375419505,
+      "median_calmar": 1.4226998781014555,
+      "min_calmar": -0.7490426786074695,
+      "max_calmar": 5.713442797300509,
+      "mean_final_equity": 1.1147709811280921,
+      "median_final_equity": 1.1770948995704507,
+      "min_final_equity": 0.8447012044275839,
+      "max_final_equity": 1.2098734878744992
+    },
+    "momentum_top_5_252d_net_10bps": {
+      "evaluated_split_count": 9,
+      "positive_cagr_fraction": 0.7777777777777778,
+      "mean_cagr": 0.12064667456671531,
+      "median_cagr": 0.18647994569990511,
+      "min_cagr": -0.17226675672987024,
+      "max_cagr": 0.2232840941166363,
+      "mean_sharpe": 1.0002380745488415,
+      "median_sharpe": 1.1524645811780552,
+      "min_sharpe": -0.9070287523780549,
+      "max_sharpe": 2.1416954606212517,
+      "mean_max_drawdown": -0.11932732150401809,
+      "median_max_drawdown": -0.08959469719499513,
+      "min_max_drawdown": -0.2256949422998431,
+      "max_max_drawdown": -0.03855561749398673,
+      "mean_calmar": 1.7520501675645448,
+      "median_calmar": 1.357518482259416,
+      "min_calmar": -0.7632725615136214,
+      "max_calmar": 5.539876436767306,
+      "mean_final_equity": 1.1097112238619387,
+      "median_final_equity": 1.171281822690777,
+      "min_final_equity": 0.8415088664540049,
+      "max_final_equity": 1.2038731137609568
+    },
+    "optimizer_selected_net": {
+      "evaluated_split_count": 9,
+      "positive_cagr_fraction": 0.7777777777777778,
+      "mean_cagr": 0.06436330115722604,
+      "median_cagr": 0.09468981311052582,
+      "min_cagr": -0.07424910374932148,
+      "max_cagr": 0.16480916728389672,
+      "mean_sharpe": 0.8637744001272466,
+      "median_sharpe": 0.9405292107764336,
+      "min_sharpe": -0.6661282257601118,
+      "max_sharpe": 2.6028106821013304,
+      "mean_max_drawdown": -0.08248982572440161,
+      "median_max_drawdown": -0.09151377813219919,
+      "min_max_drawdown": -0.15544834088587234,
+      "max_max_drawdown": -0.01810256475353933,
+      "mean_calmar": 1.822829282227743,
+      "median_calmar": 0.9036800736876963,
+      "min_calmar": -0.6821726920016662,
+      "max_calmar": 9.104188800190537,
+      "mean_final_equity": 1.0587337788846662,
+      "median_final_equity": 1.0864677018473687,
+      "min_final_equity": 0.9317218837713781,
+      "max_final_equity": 1.1500945575703585
+    }
+  },
+  "split_metric_winner_counts": {
+    "highest_test_cagr": {
+      "momentum_top_5_252d_gross": 4,
+      "optimizer_selected_net": 1,
+      "buy_hold_SPY": 4
+    },
+    "highest_test_sharpe": {
+      "equal_weight": 2,
+      "optimizer_selected_net": 2,
+      "momentum_top_5_252d_gross": 2,
+      "buy_hold_SPY": 3
+    },
+    "least_severe_test_max_drawdown": {
+      "optimizer_selected_net": 6,
+      "equal_weight": 3
+    },
+    "highest_test_calmar": {
+      "optimizer_selected_net": 2,
+      "buy_hold_SPY": 4,
+      "equal_weight": 1,
+      "momentum_top_5_252d_gross": 2
+    }
+  },
+  "aggregate_selected_degradation": {
+    "mean_cagr_test_minus_train": -0.027596061395328737,
+    "mean_calmar_test_minus_train": 1.0793462438559793,
+    "mean_max_drawdown_test_minus_train": 0.0490818892685935,
+    "mean_sharpe_test_minus_train": -0.2226139801923654
+  },
+  "interpretation_rule": "This is walk-forward OOS evidence, but it is still historical backtest evidence. Do not claim production trading performance. If optimizer wins only risk metrics but loses CAGR, describe it as a risk-return trade-off, not general outperformance."
+}

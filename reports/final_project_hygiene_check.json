@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "no_unresolved_template_fragments",
+      "passed": true,
+      "details": "No violations."
+    },
+    {
+      "name": "no_cv_or_resume_sections",
+      "passed": true,
+      "details": "No violations."
+    },
+    {
+      "name": "no_misleading_outperformance_claims",
+      "passed": true,
+      "details": "No violations."
+    },
+    {
+      "name": "readme_required_final_phrases",
+      "passed": true,
+      "details": "All required phrases found."
+    },
+    {
+      "name": "final_notebook_content",
+      "passed": true,
+      "details": "cell_count=14"
+    },
+    {
+      "name": "artifact_inventory_complete",
+      "passed": true,
+      "details": "artifact_count=34; missing_count=0; notebook_present=True; final_hygiene_present=True; final_release_checklist_present=True"
+    },
+    {
+      "name": "final_metric_interpretation_consistent",
+      "passed": true,
+      "details": "optimizer_cagr=0.061265803347460235; spy_cagr=0.13868904998073295; optimizer_final_equity=1.633237736024986; spy_final_equity=2.919728310124631; optimizer_max_dd=-0.18517075887137857; spy_max_dd=-0.3371726321428834"
+    }
+  ]
+}

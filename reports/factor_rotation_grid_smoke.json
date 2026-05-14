@@ -1,0 +1,407 @@
+{
+  "evaluation_type": "factor_rotation_grid_smoke_train_only",
+  "protocol": "Deterministic smoke grid evaluated only on the selected train window. This is not optimizer search and not out-of-sample evidence.",
+  "train_start": "2011-01-04",
+  "train_end": "2016-12-31",
+  "transaction_cost_bps": 10.0,
+  "risk_free_rate": 0.0,
+  "min_return_observations": 1000,
+  "penalty_value": 1000000.0,
+  "candidate_count": 8,
+  "valid_count": 8,
+  "invalid_count": 0,
+  "ranking_note": "Higher Sharpe/CAGR are better; less severe max drawdown is closer to zero; lower turnover is better.",
+  "leaders": {
+    "highest_train_sharpe": {
+      "candidate_id": "candidate_001",
+      "strategy_name": "factor_rotation_m126_v63_d126_mw1_vw0.5_dw0.5_top5_maxw0.4",
+      "value": 1.08518503687703
+    },
+    "highest_train_cagr": {
+      "candidate_id": "candidate_001",
+      "strategy_name": "factor_rotation_m126_v63_d126_mw1_vw0.5_dw0.5_top5_maxw0.4",
+      "value": 0.10546133075440034
+    },
+    "least_severe_train_max_drawdown": {
+      "candidate_id": "candidate_003",
+      "strategy_name": "factor_rotation_m126_v21_d63_mw0.5_vw1_dw1_top5_maxw0.4",
+      "value": -0.09682679458208232
+    },
+    "lowest_average_turnover": {
+      "candidate_id": "candidate_002",
+      "strategy_name": "factor_rotation_m252_v63_d126_mw1_vw1_dw0.5_top5_maxw0.4",
+      "value": 0.02277867528271406
+    }
+  },
+  "candidates": [
+    {
+      "parameters": {
+        "momentum_window": 63,
+        "volatility_window": 21,
+        "drawdown_window": 63,
+        "momentum_weight": 1.0,
+        "volatility_weight": 0.0,
+        "drawdown_weight": 0.0,
+        "top_k": 5,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m63_v21_d63_mw1_vw0_dw0_top5_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.045848317672297245,
+        "sharpe": 0.442751965454439,
+        "sortino": 0.5931049117194125,
+        "max_drawdown": -0.2476296898537711,
+        "calmar": 0.18514871015414727,
+        "annualized_volatility": 0.11663802364947623,
+        "monthly_win_rate": 0.5588235294117647,
+        "cumulative_return": 0.2892069719847452,
+        "final_equity": 1.2892069719847452
+      },
+      "objectives": {
+        "negative_sharpe": -0.442751965454439,
+        "negative_cagr": -0.045848317672297245,
+        "max_drawdown_abs": 0.2476296898537711,
+        "average_turnover": 0.03823529411764706
+      },
+      "turnover_summary": {
+        "average_turnover": 0.03823529411764706,
+        "total_turnover": 54.6,
+        "max_turnover": 1.9999999999999998,
+        "rebalance_count": 63,
+        "turnover_observation_count": 1428
+      },
+      "return_start": "2011-05-02",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1428,
+      "candidate_id": "candidate_000"
+    },
+    {
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 126,
+        "momentum_weight": 1.0,
+        "volatility_weight": 0.5,
+        "drawdown_weight": 0.5,
+        "top_k": 5,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m126_v63_d126_mw1_vw0.5_dw0.5_top5_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.10546133075440034,
+        "sharpe": 1.08518503687703,
+        "sortino": 1.4380422321739403,
+        "max_drawdown": -0.12617905025235132,
+        "calmar": 0.8358069786028929,
+        "annualized_volatility": 0.09672267609290351,
+        "monthly_win_rate": 0.6307692307692307,
+        "cumulative_return": 0.721317267806225,
+        "final_equity": 1.721317267806225
+      },
+      "objectives": {
+        "negative_sharpe": -1.08518503687703,
+        "negative_cagr": -0.10546133075440034,
+        "max_drawdown_abs": 0.12617905025235132,
+        "average_turnover": 0.02827838827838828
+      },
+      "turnover_summary": {
+        "average_turnover": 0.02827838827838828,
+        "total_turnover": 38.6,
+        "max_turnover": 1.9999999999999998,
+        "rebalance_count": 55,
+        "turnover_observation_count": 1365
+      },
+      "return_start": "2011-08-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1365,
+      "candidate_id": "candidate_001"
+    },
+    {
+      "parameters": {
+        "momentum_window": 252,
+        "volatility_window": 63,
+        "drawdown_window": 126,
+        "momentum_weight": 1.0,
+        "volatility_weight": 1.0,
+        "drawdown_weight": 0.5,
+        "top_k": 5,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m252_v63_d126_mw1_vw1_dw0.5_top5_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.07251620610073761,
+        "sharpe": 0.8610092845969027,
+        "sortino": 1.1204989441624265,
+        "max_drawdown": -0.12203034161834381,
+        "calmar": 0.5942473415958778,
+        "annualized_volatility": 0.08557496248648519,
+        "monthly_win_rate": 0.6101694915254238,
+        "cumulative_return": 0.410473758822234,
+        "final_equity": 1.410473758822234
+      },
+      "objectives": {
+        "negative_sharpe": -0.8610092845969027,
+        "negative_cagr": -0.07251620610073761,
+        "max_drawdown_abs": 0.12203034161834381,
+        "average_turnover": 0.02277867528271406
+      },
+      "turnover_summary": {
+        "average_turnover": 0.02277867528271406,
+        "total_turnover": 28.200000000000003,
+        "max_turnover": 1.2,
+        "rebalance_count": 52,
+        "turnover_observation_count": 1238
+      },
+      "return_start": "2012-02-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1238,
+      "candidate_id": "candidate_002"
+    },
+    {
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 21,
+        "drawdown_window": 63,
+        "momentum_weight": 0.5,
+        "volatility_weight": 1.0,
+        "drawdown_weight": 1.0,
+        "top_k": 5,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m126_v21_d63_mw0.5_vw1_dw1_top5_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.057419756378400244,
+        "sharpe": 0.7673150914726883,
+        "sortino": 1.0221821201149932,
+        "max_drawdown": -0.09682679458208232,
+        "calmar": 0.5930151527398151,
+        "annualized_volatility": 0.07659471197012985,
+        "monthly_win_rate": 0.5846153846153846,
+        "cumulative_return": 0.35313208929805406,
+        "final_equity": 1.353132089298054
+      },
+      "objectives": {
+        "negative_sharpe": -0.7673150914726883,
+        "negative_cagr": -0.057419756378400244,
+        "max_drawdown_abs": 0.09682679458208232,
+        "average_turnover": 0.032087912087912084
+      },
+      "turnover_summary": {
+        "average_turnover": 0.032087912087912084,
+        "total_turnover": 43.8,
+        "max_turnover": 1.5999999999999999,
+        "rebalance_count": 60,
+        "turnover_observation_count": 1365
+      },
+      "return_start": "2011-08-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1365,
+      "candidate_id": "candidate_003"
+    },
+    {
+      "parameters": {
+        "momentum_window": 63,
+        "volatility_window": 63,
+        "drawdown_window": 63,
+        "momentum_weight": 1.0,
+        "volatility_weight": 0.5,
+        "drawdown_weight": 0.0,
+        "top_k": 3,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m63_v63_d63_mw1_vw0.5_dw0_top3_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.01696868105096838,
+        "sharpe": 0.2030980900952719,
+        "sortino": 0.27122318429976633,
+        "max_drawdown": -0.2269497114241572,
+        "calmar": 0.07476846277744235,
+        "annualized_volatility": 0.11604786347676695,
+        "monthly_win_rate": 0.5,
+        "cumulative_return": 0.10004287164868408,
+        "final_equity": 1.100042871648684
+      },
+      "objectives": {
+        "negative_sharpe": -0.2030980900952719,
+        "negative_cagr": -0.01696868105096838,
+        "max_drawdown_abs": 0.2269497114241572,
+        "average_turnover": 0.05112044817927171
+      },
+      "turnover_summary": {
+        "average_turnover": 0.05112044817927171,
+        "total_turnover": 73.0,
+        "max_turnover": 1.9999999999999998,
+        "rebalance_count": 61,
+        "turnover_observation_count": 1428
+      },
+      "return_start": "2011-05-02",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1428,
+      "candidate_id": "candidate_004"
+    },
+    {
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 126,
+        "drawdown_window": 126,
+        "momentum_weight": 1.0,
+        "volatility_weight": 1.0,
+        "drawdown_weight": 1.0,
+        "top_k": 3,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m126_v126_d126_mw1_vw1_dw1_top3_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.07897764560944354,
+        "sharpe": 0.8660239081499311,
+        "sortino": 1.1115150079587077,
+        "max_drawdown": -0.1636113616723186,
+        "calmar": 0.4827149215200607,
+        "annualized_volatility": 0.092758455707487,
+        "monthly_win_rate": 0.6153846153846154,
+        "cumulative_return": 0.5094454453889958,
+        "final_equity": 1.5094454453889958
+      },
+      "objectives": {
+        "negative_sharpe": -0.8660239081499311,
+        "negative_cagr": -0.07897764560944354,
+        "max_drawdown_abs": 0.1636113616723186,
+        "average_turnover": 0.04273504273504273
+      },
+      "turnover_summary": {
+        "average_turnover": 0.04273504273504273,
+        "total_turnover": 58.33333333333333,
+        "max_turnover": 1.9999999999999998,
+        "rebalance_count": 59,
+        "turnover_observation_count": 1365
+      },
+      "return_start": "2011-08-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1365,
+      "candidate_id": "candidate_005"
+    },
+    {
+      "parameters": {
+        "momentum_window": 252,
+        "volatility_window": 126,
+        "drawdown_window": 252,
+        "momentum_weight": 1.0,
+        "volatility_weight": 0.5,
+        "drawdown_weight": 1.0,
+        "top_k": 3,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m252_v126_d252_mw1_vw0.5_dw1_top3_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.062020306152827054,
+        "sharpe": 0.6137444430656779,
+        "sortino": 0.8137648615865418,
+        "max_drawdown": -0.16909700029754693,
+        "calmar": 0.36677354443718524,
+        "annualized_volatility": 0.10747009248987653,
+        "monthly_win_rate": 0.5084745762711864,
+        "cumulative_return": 0.34394862288102157,
+        "final_equity": 1.3439486228810216
+      },
+      "objectives": {
+        "negative_sharpe": -0.6137444430656779,
+        "negative_cagr": -0.062020306152827054,
+        "max_drawdown_abs": 0.16909700029754693,
+        "average_turnover": 0.04496499730748518
+      },
+      "turnover_summary": {
+        "average_turnover": 0.04496499730748518,
+        "total_turnover": 55.66666666666666,
+        "max_turnover": 1.9999999999999998,
+        "rebalance_count": 51,
+        "turnover_observation_count": 1238
+      },
+      "return_start": "2012-02-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1238,
+      "candidate_id": "candidate_006"
+    },
+    {
+      "parameters": {
+        "momentum_window": 126,
+        "volatility_window": 63,
+        "drawdown_window": 126,
+        "momentum_weight": 1.0,
+        "volatility_weight": 0.5,
+        "drawdown_weight": 0.5,
+        "top_k": 2,
+        "max_asset_weight": 0.4,
+        "rebalance_frequency": "ME"
+      },
+      "strategy_name": "factor_rotation_m126_v63_d126_mw1_vw0.5_dw0.5_top2_maxw0.4",
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "valid": true,
+      "invalid_reason": null,
+      "metrics": {
+        "cagr": 0.07604786737054603,
+        "sharpe": 0.8286817484734614,
+        "sortino": 1.1026725074997323,
+        "max_drawdown": -0.13422886811303925,
+        "calmar": 0.5665537409322652,
+        "annualized_volatility": 0.09376545497004697,
+        "monthly_win_rate": 0.5846153846153846,
+        "cumulative_return": 0.48737719505587607,
+        "final_equity": 1.487377195055876
+      },
+      "objectives": {
+        "negative_sharpe": -0.8286817484734614,
+        "negative_cagr": -0.07604786737054603,
+        "max_drawdown_abs": 0.13422886811303925,
+        "average_turnover": 0.041025641025641026
+      },
+      "turnover_summary": {
+        "average_turnover": 0.041025641025641026,
+        "total_turnover": 56.0,
+        "max_turnover": 1.6,
+        "rebalance_count": 54,
+        "turnover_observation_count": 1365
+      },
+      "return_start": "2011-08-01",
+      "return_end": "2016-12-30",
+      "return_observation_count": 1365,
+      "candidate_id": "candidate_007"
+    }
+  ],
+  "split_index": 0
+}

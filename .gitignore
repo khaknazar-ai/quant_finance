@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Data and artifacts
+data/raw/*
+data/processed/*
+data/features/*
+reports/*
+mlruns/*
+*.parquet
+*.csv
+*.pkl
+*.joblib
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+!reports/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Local environment
+.env
+
+# Generated research data
+data/*.parquet
+data/*.csv
+data/*.json
+
+# Required portfolio evidence artifacts
+!reports/*.json
+!reports/*.md
+!reports/*.log
+!reports/*.parquet
+!notebooks/
+!notebooks/*.ipynb
+!docs/
+!docs/*.md

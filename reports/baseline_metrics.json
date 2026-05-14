@@ -1,0 +1,105 @@
+{
+  "benchmark_ticker": "SPY",
+  "universe_tickers": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "TLT",
+    "IEF",
+    "LQD",
+    "HYG",
+    "GLD",
+    "DBC",
+    "XLK",
+    "XLF",
+    "XLE",
+    "XLV"
+  ],
+  "price_column": "adjusted_close",
+  "risk_free_rate": 0.0,
+  "return_alignment": "exact_common_date_intersection",
+  "common_start_date": "2011-02-01",
+  "common_end_date": "2026-05-13",
+  "common_observation_count": 3843,
+  "include_momentum": true,
+  "momentum_lookback_days": 252,
+  "momentum_top_k": 5,
+  "momentum_rebalance_frequency": "ME",
+  "transaction_cost_bps": 10.0,
+  "cost_model": "net_return = gross_return - turnover * bps / 10000",
+  "turnover_convention": "sum_abs_weight_change",
+  "momentum_cost_summary": {
+    "average_turnover": 0.01816289357272964,
+    "total_turnover": 69.80000000000001,
+    "average_transaction_cost_return": 1.8162893572729638e-05,
+    "total_transaction_cost_return": 0.0698,
+    "cost_observation_count": 3843
+  },
+  "strategy_count": 4,
+  "date_ranges": {
+    "buy_hold_SPY": {
+      "start": "2011-02-01",
+      "end": "2026-05-13"
+    },
+    "equal_weight": {
+      "start": "2011-02-01",
+      "end": "2026-05-13"
+    },
+    "momentum_top_5_252d_gross": {
+      "start": "2011-02-01",
+      "end": "2026-05-13"
+    },
+    "momentum_top_5_252d_net_10bps": {
+      "start": "2011-02-01",
+      "end": "2026-05-13"
+    }
+  },
+  "metrics": {
+    "buy_hold_SPY": {
+      "cumulative_return": 6.566436006569396,
+      "cagr": 0.14191090540882878,
+      "annualized_volatility": 0.1712198273289171,
+      "sharpe": 0.8610741372702335,
+      "sortino": 1.0571491444384944,
+      "max_drawdown": -0.3371726321428832,
+      "calmar": 0.42088500631537434,
+      "monthly_win_rate": 0.6902173913043478,
+      "observation_count": 3843
+    },
+    "equal_weight": {
+      "cumulative_return": 2.9757624515914505,
+      "cagr": 0.09472807896474844,
+      "annualized_volatility": 0.11792797938375313,
+      "sharpe": 0.8267334009114818,
+      "sortino": 1.0274546841919217,
+      "max_drawdown": -0.2566179393415642,
+      "calmar": 0.3691405176419224,
+      "monthly_win_rate": 0.6739130434782609,
+      "observation_count": 3843
+    },
+    "momentum_top_5_252d_gross": {
+      "cumulative_return": 4.4141831523807715,
+      "cagr": 0.11712178444642274,
+      "annualized_volatility": 0.14005208035234865,
+      "sharpe": 0.8611792554750276,
+      "sortino": 1.0869133847379073,
+      "max_drawdown": -0.225388624369533,
+      "calmar": 0.5196437254721304,
+      "monthly_win_rate": 0.6793478260869565,
+      "observation_count": 3843
+    },
+    "momentum_top_5_252d_net_10bps": {
+      "cumulative_return": 4.049988189300049,
+      "cagr": 0.11203229718913321,
+      "annualized_volatility": 0.1399882087363884,
+      "sharpe": 0.8288762185945096,
+      "sortino": 1.0463957110681055,
+      "max_drawdown": -0.22569494229984288,
+      "calmar": 0.49638816026410887,
+      "monthly_win_rate": 0.6684782608695652,
+      "observation_count": 3843
+    }
+  }
+}

@@ -1,0 +1,858 @@
+{
+  "evaluation_type": "walk_forward_baseline_oos",
+  "benchmark_ticker": "SPY",
+  "universe_tickers": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "TLT",
+    "IEF",
+    "LQD",
+    "HYG",
+    "GLD",
+    "DBC",
+    "XLK",
+    "XLF",
+    "XLE",
+    "XLV"
+  ],
+  "price_column": "adjusted_close",
+  "risk_free_rate": 0.0,
+  "return_alignment": "exact_common_date_intersection_per_split",
+  "requested_split_count": 9,
+  "evaluated_split_count": 9,
+  "strategy_count": 4,
+  "strategies": [
+    "buy_hold_SPY",
+    "equal_weight",
+    "momentum_top_5_252d_gross",
+    "momentum_top_5_252d_net_10bps"
+  ],
+  "momentum_lookback_days": 252,
+  "momentum_top_k": 5,
+  "momentum_rebalance_frequency": "ME",
+  "transaction_cost_bps": 10.0,
+  "cost_model": "net_return = gross_return - turnover * bps / 10000",
+  "turnover_convention": "sum_abs_weight_change",
+  "splits": [
+    {
+      "split_id": 0,
+      "train_start": "2011-01-04",
+      "train_end": "2016-12-31",
+      "test_start": "2017-01-01",
+      "test_end": "2017-12-31",
+      "common_start_date": "2017-01-03",
+      "common_end_date": "2017-12-29",
+      "common_observation_count": 251,
+      "momentum_cost_summary": {
+        "average_turnover": 0.012749003984063745,
+        "total_turnover": 3.2,
+        "average_transaction_cost_return": 1.2749003984063746e-05,
+        "total_transaction_cost_return": 0.0032,
+        "cost_observation_count": 251
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.21705391175919497,
+          "cagr": 0.21800675343204423,
+          "annualized_volatility": 0.06743845896256671,
+          "sharpe": 2.9591242040569963,
+          "sortino": 3.993247311579797,
+          "max_drawdown": -0.02610074537757956,
+          "calmar": 8.352510638233007,
+          "monthly_win_rate": 1.0,
+          "observation_count": 251
+        },
+        "equal_weight": {
+          "cumulative_return": 0.165599084413099,
+          "cagr": 0.1663108984750623,
+          "annualized_volatility": 0.0490942515222621,
+          "sharpe": 3.1590811192685426,
+          "sortino": 4.618709042804782,
+          "max_drawdown": -0.01996321604050888,
+          "calmar": 8.330867037534844,
+          "monthly_win_rate": 1.0,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.19910674452711374,
+          "cagr": 0.19997450890551471,
+          "annualized_volatility": 0.09224818988824116,
+          "sharpe": 2.022896715666503,
+          "sortino": 2.788610369366695,
+          "max_drawdown": -0.03817022186232366,
+          "calmar": 5.2390187729797235,
+          "monthly_win_rate": 0.9166666666666666,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.19529548437386168,
+          "cagr": 0.19614531961441606,
+          "annualized_volatility": 0.09209014207701038,
+          "sharpe": 1.991481468165769,
+          "sortino": 2.7420760808324096,
+          "max_drawdown": -0.03855561749398584,
+          "calmar": 5.087334410997622,
+          "monthly_win_rate": 0.9166666666666666,
+          "observation_count": 251
+        }
+      }
+    },
+    {
+      "split_id": 1,
+      "train_start": "2012-01-01",
+      "train_end": "2017-12-31",
+      "test_start": "2018-01-01",
+      "test_end": "2018-12-31",
+      "common_start_date": "2018-01-02",
+      "common_end_date": "2018-12-31",
+      "common_observation_count": 251,
+      "momentum_cost_summary": {
+        "average_turnover": 0.011155378486055778,
+        "total_turnover": 2.8000000000000003,
+        "average_transaction_cost_return": 1.1155378486055779e-05,
+        "total_transaction_cost_return": 0.0028000000000000004,
+        "cost_observation_count": 251
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": -0.04568989195463535,
+          "cagr": -0.0458676835129993,
+          "annualized_volatility": 0.17036811278070313,
+          "sharpe": -0.19044613778529568,
+          "sortino": -0.23247244793129787,
+          "max_drawdown": -0.19348927336969102,
+          "calmar": -0.237055433173094,
+          "monthly_win_rate": 0.6666666666666666,
+          "observation_count": 251
+        },
+        "equal_weight": {
+          "cumulative_return": -0.056972280912206075,
+          "cagr": -0.05719264412896308,
+          "annualized_volatility": 0.11031483174206431,
+          "sharpe": -0.47876658165641006,
+          "sortino": -0.6317001024561408,
+          "max_drawdown": -0.13630972463805324,
+          "calmar": -0.41957860512761064,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": -0.09500082338615479,
+          "cagr": -0.09536066475479366,
+          "annualized_volatility": 0.18361530536635548,
+          "sharpe": -0.4539807044364643,
+          "sortino": -0.5678474333820754,
+          "max_drawdown": -0.22538862436953255,
+          "calmar": -0.4230943998240413,
+          "monthly_win_rate": 0.5,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": -0.0975169527804649,
+          "cagr": -0.09788580013390491,
+          "annualized_volatility": 0.18352228571492132,
+          "sharpe": -0.469528595496425,
+          "sortino": -0.5871958819292676,
+          "max_drawdown": -0.22569494229984333,
+          "calmar": -0.4337084346527373,
+          "monthly_win_rate": 0.4166666666666667,
+          "observation_count": 251
+        }
+      }
+    },
+    {
+      "split_id": 2,
+      "train_start": "2013-01-01",
+      "train_end": "2018-12-31",
+      "test_start": "2019-01-01",
+      "test_end": "2019-12-31",
+      "common_start_date": "2019-01-02",
+      "common_end_date": "2019-12-31",
+      "common_observation_count": 252,
+      "momentum_cost_summary": {
+        "average_turnover": 0.02857142857142857,
+        "total_turnover": 7.2,
+        "average_transaction_cost_return": 2.857142857142857e-05,
+        "total_transaction_cost_return": 0.0072,
+        "cost_observation_count": 252
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.312238543996221,
+          "cagr": 0.312238543996221,
+          "annualized_volatility": 0.12510916347519388,
+          "sharpe": 2.235596855333594,
+          "sortino": 2.7427334246717976,
+          "max_drawdown": -0.06618314295787509,
+          "calmar": 4.717795650698513,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "equal_weight": {
+          "cumulative_return": 0.22418272924928062,
+          "cagr": 0.22418272924928062,
+          "annualized_volatility": 0.08050949296297298,
+          "sharpe": 2.553540452992694,
+          "sortino": 3.4312245709493454,
+          "max_drawdown": -0.03979975946514791,
+          "calmar": 5.632765932809074,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.16076016991424025,
+          "cagr": 0.16076016991424025,
+          "annualized_volatility": 0.07081869484106046,
+          "sharpe": 2.140989197103791,
+          "sortino": 2.7003874198579623,
+          "max_drawdown": -0.05207392916521214,
+          "calmar": 3.0871526787272985,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.15244445539326978,
+          "cagr": 0.15244445539326978,
+          "annualized_volatility": 0.07073262666268257,
+          "sharpe": 2.0418025941046416,
+          "sortino": 2.5830536132083686,
+          "max_drawdown": -0.05207392916521203,
+          "calmar": 2.9274621261940466,
+          "monthly_win_rate": 0.75,
+          "observation_count": 252
+        }
+      }
+    },
+    {
+      "split_id": 3,
+      "train_start": "2014-01-01",
+      "train_end": "2019-12-31",
+      "test_start": "2020-01-01",
+      "test_end": "2020-12-31",
+      "common_start_date": "2020-01-02",
+      "common_end_date": "2020-12-31",
+      "common_observation_count": 253,
+      "momentum_cost_summary": {
+        "average_turnover": 0.023715415019762844,
+        "total_turnover": 6.0,
+        "average_transaction_cost_return": 2.3715415019762845e-05,
+        "total_transaction_cost_return": 0.006,
+        "cost_observation_count": 253
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.18331634381391915,
+          "cagr": 0.18252934500629636,
+          "annualized_volatility": 0.3339795289945497,
+          "sharpe": 0.6701122553007537,
+          "sortino": 0.7552496272412005,
+          "max_drawdown": -0.3371726321428833,
+          "calmar": 0.5413527896562675,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 253
+        },
+        "equal_weight": {
+          "cumulative_return": 0.14387700972343764,
+          "cagr": 0.1432694090499087,
+          "annualized_volatility": 0.23251961929154477,
+          "sharpe": 0.693057317939155,
+          "sortino": 0.7397926587466761,
+          "max_drawdown": -0.2566179393415643,
+          "calmar": 0.5582984939303635,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 253
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.21247298350440924,
+          "cagr": 0.2115500245156039,
+          "annualized_volatility": 0.18701030797076654,
+          "sharpe": 1.1202415389381728,
+          "sortino": 1.2555923746884097,
+          "max_drawdown": -0.17772286573796214,
+          "calmar": 1.190336559323307,
+          "monthly_win_rate": 0.6666666666666666,
+          "observation_count": 253
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.20526766126907958,
+          "cagr": 0.20437856058125847,
+          "annualized_volatility": 0.18682134932937244,
+          "sharpe": 1.0893852942614142,
+          "sortino": 1.2202772000074684,
+          "max_drawdown": -0.17804491033725178,
+          "calmar": 1.1479045382096327,
+          "monthly_win_rate": 0.6666666666666666,
+          "observation_count": 253
+        }
+      }
+    },
+    {
+      "split_id": 4,
+      "train_start": "2015-01-01",
+      "train_end": "2020-12-31",
+      "test_start": "2021-01-01",
+      "test_end": "2021-12-31",
+      "common_start_date": "2021-01-04",
+      "common_end_date": "2021-12-31",
+      "common_observation_count": 252,
+      "momentum_cost_summary": {
+        "average_turnover": 0.01904761904761905,
+        "total_turnover": 4.800000000000001,
+        "average_transaction_cost_return": 1.904761904761905e-05,
+        "total_transaction_cost_return": 0.0048000000000000004,
+        "cost_observation_count": 252
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.28728762229560667,
+          "cagr": 0.28728762229560667,
+          "annualized_volatility": 0.12988748059227428,
+          "sharpe": 2.009993562810803,
+          "sortino": 2.871847447437618,
+          "max_drawdown": -0.05114132838716412,
+          "calmar": 5.617523661503336,
+          "monthly_win_rate": 0.75,
+          "observation_count": 252
+        },
+        "equal_weight": {
+          "cumulative_return": 0.1683462725093896,
+          "cagr": 0.1683462725093896,
+          "annualized_volatility": 0.09502952706402143,
+          "sharpe": 1.6851385327411539,
+          "sortino": 2.5219683354539164,
+          "max_drawdown": -0.04075223647427806,
+          "calmar": 4.130970152169346,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.1777091693746371,
+          "cagr": 0.1777091693746371,
+          "annualized_volatility": 0.16740733554674014,
+          "sharpe": 1.0608453375078324,
+          "sortino": 1.623178814515737,
+          "max_drawdown": -0.07662603017823555,
+          "calmar": 2.319174945658514,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.17210927354440675,
+          "cagr": 0.17210927354440675,
+          "annualized_volatility": 0.16721902514107928,
+          "sharpe": 1.0333351198141858,
+          "sortino": 1.5798880958978339,
+          "max_drawdown": -0.07698469986851164,
+          "calmar": 2.2356295970285784,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        }
+      }
+    },
+    {
+      "split_id": 5,
+      "train_start": "2016-01-01",
+      "train_end": "2021-12-31",
+      "test_start": "2022-01-01",
+      "test_end": "2022-12-31",
+      "common_start_date": "2022-01-03",
+      "common_end_date": "2022-12-30",
+      "common_observation_count": 251,
+      "momentum_cost_summary": {
+        "average_turnover": 0.01593625498007968,
+        "total_turnover": 4.0,
+        "average_transaction_cost_return": 1.593625498007968e-05,
+        "total_transaction_cost_return": 0.004,
+        "cost_observation_count": 251
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": -0.18175374791126142,
+          "cagr": -0.18240740544142775,
+          "annualized_volatility": 0.24242960394941057,
+          "sharpe": -0.7095884123744386,
+          "sortino": -1.13997918583116,
+          "max_drawdown": -0.24496399572091676,
+          "calmar": -0.7446294501549581,
+          "monthly_win_rate": 0.4166666666666667,
+          "observation_count": 251
+        },
+        "equal_weight": {
+          "cumulative_return": -0.10277877062168861,
+          "cagr": -0.10316636085550512,
+          "annualized_volatility": 0.16272360977323813,
+          "sharpe": -0.588001408816238,
+          "sortino": -0.957901747232035,
+          "max_drawdown": -0.17428611016251638,
+          "calmar": -0.5919367915165799,
+          "monthly_win_rate": 0.4166666666666667,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.023387868656329358,
+          "cagr": 0.023482132986577087,
+          "annualized_volatility": 0.1829445554663732,
+          "sharpe": 0.2182420841665285,
+          "sortino": 0.3163768356687222,
+          "max_drawdown": -0.17721518226123956,
+          "calmar": 0.13250632754456212,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 251
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.019323113450093743,
+          "cagr": 0.019400839974365036,
+          "annualized_volatility": 0.18283390121644477,
+          "sharpe": 0.19640922486475032,
+          "sortino": 0.28481787249239476,
+          "max_drawdown": -0.17918311127992603,
+          "calmar": 0.10827382020427347,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 251
+        }
+      }
+    },
+    {
+      "split_id": 6,
+      "train_start": "2017-01-01",
+      "train_end": "2022-12-31",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "common_start_date": "2023-01-03",
+      "common_end_date": "2023-12-29",
+      "common_observation_count": 250,
+      "momentum_cost_summary": {
+        "average_turnover": 0.016,
+        "total_turnover": 4.0,
+        "average_transaction_cost_return": 1.6e-05,
+        "total_transaction_cost_return": 0.004,
+        "cost_observation_count": 250
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.26175794986454615,
+          "cagr": 0.26410706373401127,
+          "annualized_volatility": 0.13075545179084402,
+          "sharpe": 1.8582987913792421,
+          "sortino": 3.068486073143718,
+          "max_drawdown": -0.0997430402743702,
+          "calmar": 2.647874608669571,
+          "monthly_win_rate": 0.6666666666666666,
+          "observation_count": 250
+        },
+        "equal_weight": {
+          "cumulative_return": 0.1487677946742192,
+          "cagr": 0.15004308180809867,
+          "annualized_volatility": 0.09529835167826065,
+          "sharpe": 1.5147710348188217,
+          "sortino": 2.661235698039971,
+          "max_drawdown": -0.07948187923000827,
+          "calmar": 1.8877646485168926,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 250
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.14372325659605423,
+          "cagr": 0.14495263205262288,
+          "annualized_volatility": 0.11445782006261299,
+          "sharpe": 1.239988834950257,
+          "sortino": 1.9657072761460828,
+          "max_drawdown": -0.08609017174424971,
+          "calmar": 1.6837303157349643,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 250
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.13918814895085818,
+          "cagr": 0.1403764024908405,
+          "annualized_volatility": 0.11423669540946416,
+          "sharpe": 1.2070939067006794,
+          "sortino": 1.9122481173601686,
+          "max_drawdown": -0.08609017174424971,
+          "calmar": 1.6305740788607124,
+          "monthly_win_rate": 0.5833333333333334,
+          "observation_count": 250
+        }
+      }
+    },
+    {
+      "split_id": 7,
+      "train_start": "2018-01-01",
+      "train_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "common_start_date": "2024-01-02",
+      "common_end_date": "2024-12-31",
+      "common_observation_count": 252,
+      "momentum_cost_summary": {
+        "average_turnover": 0.012698412698412698,
+        "total_turnover": 3.2,
+        "average_transaction_cost_return": 1.2698412698412699e-05,
+        "total_transaction_cost_return": 0.0032,
+        "cost_observation_count": 252
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.24886467843001236,
+          "cagr": 0.24886467843001236,
+          "annualized_volatility": 0.12568968551382473,
+          "sharpe": 1.8316218502712485,
+          "sortino": 2.403120701073063,
+          "max_drawdown": -0.08405600526835333,
+          "calmar": 2.9607007570190667,
+          "monthly_win_rate": 0.75,
+          "observation_count": 252
+        },
+        "equal_weight": {
+          "cumulative_return": 0.10896368873820861,
+          "cagr": 0.10896368873820861,
+          "annualized_volatility": 0.0867928451208608,
+          "sharpe": 1.2351849467719864,
+          "sortino": 1.6389631811029168,
+          "max_drawdown": -0.05203690122870164,
+          "calmar": 2.0939695901436237,
+          "monthly_win_rate": 0.75,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.1931045625909409,
+          "cagr": 0.1931045625909409,
+          "annualized_volatility": 0.13384443014018524,
+          "sharpe": 1.3864081561956914,
+          "sortino": 1.843633873405847,
+          "max_drawdown": -0.08959469719499513,
+          "calmar": 2.1553124083969553,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.18929193058567972,
+          "cagr": 0.18929193058567972,
+          "annualized_volatility": 0.13386570712855755,
+          "sharpe": 1.3622832428068037,
+          "sortino": 1.8130787036670415,
+          "max_drawdown": -0.08959469719499524,
+          "calmar": 2.112758193419661,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 252
+        }
+      }
+    },
+    {
+      "split_id": 8,
+      "train_start": "2019-01-01",
+      "train_end": "2024-12-31",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "common_start_date": "2025-01-02",
+      "common_end_date": "2025-12-31",
+      "common_observation_count": 250,
+      "momentum_cost_summary": {
+        "average_turnover": 0.019200000000000002,
+        "total_turnover": 4.800000000000001,
+        "average_transaction_cost_return": 1.9200000000000003e-05,
+        "total_transaction_cost_return": 0.0048000000000000004,
+        "cost_observation_count": 250
+      },
+      "metrics": {
+        "buy_hold_SPY": {
+          "cumulative_return": 0.17719061307023276,
+          "cagr": 0.17872790399682636,
+          "annualized_volatility": 0.1948674688549738,
+          "sharpe": 0.9400732970149749,
+          "sortino": 1.1990769919807833,
+          "max_drawdown": -0.18755238717833622,
+          "calmar": 0.9529492356014696,
+          "monthly_win_rate": 0.75,
+          "observation_count": 250
+        },
+        "equal_weight": {
+          "cumulative_return": 0.18879886857302064,
+          "cagr": 0.19044476665682675,
+          "annualized_volatility": 0.11979976597144171,
+          "sharpe": 1.515075162269653,
+          "sortino": 1.8737825582052403,
+          "max_drawdown": -0.11437166205194482,
+          "calmar": 1.6651394518541784,
+          "monthly_win_rate": 0.8333333333333334,
+          "observation_count": 250
+        },
+        "momentum_top_5_252d_gross": {
+          "cumulative_return": 0.22642334735170078,
+          "cagr": 0.22842750762476016,
+          "annualized_volatility": 0.1467415833632974,
+          "sharpe": 1.475489024980065,
+          "sortino": 1.9241308171111389,
+          "max_drawdown": -0.14669632971228208,
+          "calmar": 1.5571453496674306,
+          "monthly_win_rate": 0.75,
+          "observation_count": 250
+        },
+        "momentum_top_5_252d_net_10bps": {
+          "cumulative_return": 0.2205410084359649,
+          "cagr": 0.22248853459444362,
+          "annualized_volatility": 0.14682310522185868,
+          "sharpe": 1.4417158351261232,
+          "sortino": 1.8816204341269414,
+          "max_drawdown": -0.14772381415218605,
+          "calmar": 1.5061114950987826,
+          "monthly_win_rate": 0.75,
+          "observation_count": 250
+        }
+      }
+    }
+  ],
+  "aggregate_metrics": {
+    "buy_hold_SPY": {
+      "split_count": 9,
+      "metrics": {
+        "annualized_volatility": {
+          "mean": 0.16894721721270456,
+          "std": 0.0748260905615666,
+          "min": 0.06743845896256671,
+          "max": 0.3339795289945497
+        },
+        "cagr": {
+          "mean": 0.16260964688184346,
+          "std": 0.1570208960553785,
+          "min": -0.18240740544142775,
+          "max": 0.312238543996221
+        },
+        "calmar": {
+          "mean": 2.7565580508947973,
+          "std": 2.843705008148235,
+          "min": -0.7446294501549581,
+          "max": 8.352510638233007
+        },
+        "cumulative_return": {
+          "mean": 0.1622517803737596,
+          "std": 0.1566251589143496,
+          "min": -0.18175374791126142,
+          "max": 0.312238543996221
+        },
+        "max_drawdown": {
+          "mean": -0.14337806118635216,
+          "std": 0.097742463727801,
+          "min": -0.3371726321428833,
+          "max": -0.02610074537757956
+        },
+        "monthly_win_rate": {
+          "mean": 0.7129629629629629,
+          "std": 0.15270761576361705,
+          "min": 0.4166666666666667,
+          "max": 1.0
+        },
+        "observation_count": {
+          "mean": 251.33333333333334,
+          "std": 0.9428090415820634,
+          "min": 250.0,
+          "max": 253.0
+        },
+        "sharpe": {
+          "mean": 1.2894206962230976,
+          "std": 1.1309592082136422,
+          "min": -0.7095884123744386,
+          "max": 2.9591242040569963
+        },
+        "sortino": {
+          "mean": 1.7401455492628353,
+          "std": 1.5991504410625792,
+          "min": -1.13997918583116,
+          "max": 3.993247311579797
+        }
+      },
+      "positive_cagr_split_fraction": 0.7777777777777778,
+      "best_cagr_split_id": 2,
+      "worst_cagr_split_id": 5
+    },
+    "equal_weight": {
+      "split_count": 9,
+      "metrics": {
+        "annualized_volatility": {
+          "mean": 0.11467581056962965,
+          "std": 0.050824564920759846,
+          "min": 0.0490942515222621,
+          "max": 0.23251961929154477
+        },
+        "cagr": {
+          "mean": 0.11013353794470078,
+          "std": 0.10655658591884175,
+          "min": -0.10316636085550512,
+          "max": 0.22418272924928062
+        },
+        "calmar": {
+          "mean": 2.5875844344793477,
+          "std": 2.778791887475345,
+          "min": -0.5919367915165799,
+          "max": 8.330867037534844
+        },
+        "cumulative_return": {
+          "mean": 0.10986493292741785,
+          "std": 0.10622227968616259,
+          "min": -0.10277877062168861,
+          "max": 0.22418272924928062
+        },
+        "max_drawdown": {
+          "mean": -0.10151326984808039,
+          "std": 0.0728877686301294,
+          "min": -0.2566179393415643,
+          "max": -0.01996321604050888
+        },
+        "monthly_win_rate": {
+          "mean": 0.712962962962963,
+          "std": 0.17173367584251303,
+          "min": 0.4166666666666667,
+          "max": 1.0
+        },
+        "observation_count": {
+          "mean": 251.33333333333334,
+          "std": 0.9428090415820634,
+          "min": 250.0,
+          "max": 253.0
+        },
+        "sharpe": {
+          "mean": 1.2543422862588176,
+          "std": 1.1714492699339767,
+          "min": -0.588001408816238,
+          "max": 3.1590811192685426
+        },
+        "sortino": {
+          "mean": 1.766230466179408,
+          "std": 1.717016786501733,
+          "min": -0.957901747232035,
+          "max": 4.618709042804782
+        }
+      },
+      "positive_cagr_split_fraction": 0.7777777777777778,
+      "best_cagr_split_id": 2,
+      "worst_cagr_split_id": 5
+    },
+    "momentum_top_5_252d_gross": {
+      "split_count": 9,
+      "metrics": {
+        "annualized_volatility": {
+          "mean": 0.1421209136272925,
+          "std": 0.04009600648872354,
+          "min": 0.07081869484106046,
+          "max": 0.18701030797076654
+        },
+        "cagr": {
+          "mean": 0.1382888936900115,
+          "std": 0.1000988766488885,
+          "min": -0.09536066475479366,
+          "max": 0.22842750762476016
+        },
+        "calmar": {
+          "mean": 1.8823647731343014,
+          "std": 1.562946521375356,
+          "min": -0.4230943998240413,
+          "max": 5.2390187729797235
+        },
+        "cumulative_return": {
+          "mean": 0.13796525323658565,
+          "std": 0.09982672392740678,
+          "min": -0.09500082338615479,
+          "max": 0.22642334735170078
+        },
+        "max_drawdown": {
+          "mean": -0.1188420058028925,
+          "std": 0.06117245000812226,
+          "min": -0.22538862436953255,
+          "max": -0.03817022186232366
+        },
+        "monthly_win_rate": {
+          "mean": 0.7222222222222222,
+          "std": 0.13608276348795434,
+          "min": 0.5,
+          "max": 0.9166666666666666
+        },
+        "observation_count": {
+          "mean": 251.33333333333334,
+          "std": 0.9428090415820634,
+          "min": 250.0,
+          "max": 253.0
+        },
+        "sharpe": {
+          "mean": 1.1345689094524862,
+          "std": 0.7718344773535126,
+          "min": -0.4539807044364643,
+          "max": 2.140989197103791
+        },
+        "sortino": {
+          "mean": 1.5388633719309466,
+          "std": 1.0195082013328827,
+          "min": -0.5678474333820754,
+          "max": 2.788610369366695
+        }
+      },
+      "positive_cagr_split_fraction": 0.8888888888888888,
+      "best_cagr_split_id": 8,
+      "worst_cagr_split_id": 1
+    },
+    "momentum_top_5_252d_net_10bps": {
+      "split_count": 9,
+      "metrics": {
+        "annualized_volatility": {
+          "mean": 0.14201609310015456,
+          "std": 0.0400925602962931,
+          "min": 0.07073262666268257,
+          "max": 0.18682134932937244
+        },
+        "cagr": {
+          "mean": 0.13319439073830833,
+          "std": 0.09912614005586412,
+          "min": -0.09788580013390491,
+          "max": 0.22248853459444362
+        },
+        "calmar": {
+          "mean": 1.8135933139289524,
+          "std": 1.5186017373900587,
+          "min": -0.4337084346527373,
+          "max": 5.087334410997622
+        },
+        "cumulative_return": {
+          "mean": 0.13288268035808326,
+          "std": 0.09884996674852538,
+          "min": -0.0975169527804649,
+          "max": 0.2205410084359649
+        },
+        "max_drawdown": {
+          "mean": -0.11932732150401797,
+          "std": 0.06144520954634875,
+          "min": -0.22569494229984333,
+          "max": -0.03855561749398584
+        },
+        "monthly_win_rate": {
+          "mean": 0.7037037037037037,
+          "std": 0.14756830972693727,
+          "min": 0.4166666666666667,
+          "max": 0.9166666666666666
+        },
+        "observation_count": {
+          "mean": 251.33333333333334,
+          "std": 0.9428090415820634,
+          "min": 250.0,
+          "max": 253.0
+        },
+        "sharpe": {
+          "mean": 1.0993308989275492,
+          "std": 0.7574233955092781,
+          "min": -0.469528595496425,
+          "max": 2.0418025941046416
+        },
+        "sortino": {
+          "mean": 1.492207137295929,
+          "std": 1.0025796564217007,
+          "min": -0.5871958819292676,
+          "max": 2.7420760808324096
+        }
+      },
+      "positive_cagr_split_fraction": 0.8888888888888888,
+      "best_cagr_split_id": 8,
+      "worst_cagr_split_id": 1
+    }
+  }
+}
